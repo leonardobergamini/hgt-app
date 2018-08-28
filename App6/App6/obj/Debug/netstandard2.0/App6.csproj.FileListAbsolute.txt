@@ -1,0 +1,16 @@
+C:\Users\lucia\source\repos\App6\App6\App6\bin\Debug\netstandard2.0\App6.deps.json
+C:\Users\lucia\source\repos\App6\App6\App6\bin\Debug\netstandard2.0\App6.dll
+C:\Users\lucia\source\repos\App6\App6\App6\bin\Debug\netstandard2.0\App6.pdb
+C:\Users\lucia\source\repos\App6\App6\App6\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\lucia\source\repos\App6\App6\App6\obj\Debug\netstandard2.0\App6.csproj.CoreCompileInputs.cache
+C:\Users\lucia\source\repos\App6\App6\App6\obj\Debug\netstandard2.0\App6.AssemblyInfoInputs.cache
+C:\Users\lucia\source\repos\App6\App6\App6\obj\Debug\netstandard2.0\App6.AssemblyInfo.cs
+C:\Users\lucia\source\repos\App6\App6\App6\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\lucia\source\repos\App6\App6\App6\obj\Debug\netstandard2.0\App6.dll
+C:\Users\lucia\source\repos\App6\App6\App6\obj\Debug\netstandard2.0\App6.pdb
+C:\Users\lucia\source\repos\App6\App6\App6\obj\Debug\netstandard2.0\App6.csprojAssemblyReference.cache
+C:\Users\lucia\source\repos\App6\App6\App6\obj\Debug\netstandard2.0\Views\ItemDetailPage.xaml.g.cs
+C:\Users\lucia\source\repos\App6\App6\App6\obj\Debug\netstandard2.0\Views\ItemsPage.xaml.g.cs
+C:\Users\lucia\source\repos\App6\App6\App6\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+C:\Users\lucia\source\repos\App6\App6\App6\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\lucia\source\repos\App6\App6\App6\obj\Debug\netstandard2.0\Views\PerfilPage.xaml.g.cs
