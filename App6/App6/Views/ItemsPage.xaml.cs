@@ -10,6 +10,8 @@ using Xamarin.Forms.Xaml;
 using App6.Models;
 using App6.Views;
 using App6.ViewModels;
+using App6.Layers.Business;
+using App6.Layers.Data;
 
 namespace App6.Views
 {
@@ -17,17 +19,12 @@ namespace App6.Views
     public partial class ItemsPage : ContentPage
     {
 
-
         public ItemsPage()
         {
             InitializeComponent();
 
-
-
-        }
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
+            var ListaTickets = new TicketBusiness().GetList();
+            ItemsListView.ItemsSource = ListaTickets;
         }
     }
 }

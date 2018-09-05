@@ -1,23 +1,29 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="App6.Views.ItemsPage"  
+             x:Class="App6.Views.ItemsPage" 
+             xmlns:vm="clr-namespace:App6.ViewModels"
              x:Name="BrowseItemsPage"
              Title="Meus ingressos">
+    
+    <ContentPage.BindingContext> 
+        <vm:ItemsViewModel/>
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="ItemsListView" 
-                      VerticalOptions="FillAndExpand">
-                <!-- ItemsSource="{Binding Items} -->
+                      VerticalOptions="FillAndExpand"
+                      ItemsSource="{Binding ListaTickets}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10">
-                                <Label Text="{Binding Text}" 
+                                <Label Text="{Binding Nome}" 
                                        LineBreakMode="NoWrap" 
                                        Style="{DynamicResource ListItemTextStyle}" 
                                        FontSize="16" />
-                                <Label Text="{Binding Description}" 
+                                <Label Text="{Binding Descricao}" 
                                        LineBreakMode="NoWrap" 
                                        Style="{DynamicResource ListItemDetailTextStyle}" 
                                        FontSize="13" />
@@ -29,3 +35,4 @@
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
+

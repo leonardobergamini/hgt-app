@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using App6.Layers.Business;
+using App6.Models;
 using Xamarin.Forms;
 
 namespace App6.ViewModels
@@ -19,6 +20,7 @@ namespace App6.ViewModels
                 {
                     var usuario = new UsuarioBusiness().Login(Usuario.ToLower(), Senha);
                     //App.MensagemAlerta("Nome do usuário: " + usuario.Nome);
+                    Global.Usuario = usuario;
                     MessagingCenter.Send<string>("", "LoginSucesso");
                 }
                 catch (Exception e)

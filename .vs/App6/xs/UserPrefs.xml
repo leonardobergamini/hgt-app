@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{F2CD69AB-080A-4490-946D-EEDFCEECA1B4}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="App6/App6/Views/ItemsPage.xaml.cs">
+    <Files>
+      <File FileName="App6/App6/Views/ItemsPage.xaml" Line="15" Column="44" />
+      <File FileName="App6/App6/ViewModels/ItemsViewModel.cs" Line="35" Column="13" />
+      <File FileName="App6/App6/Layers/Data/TicketData.cs" Line="16" Column="69" />
+      <File FileName="App6/App6/Layers/Business/TicketBusiness.cs" Line="14" Column="59" />
+      <File FileName="App6/App6/Views/ItemsPage.xaml.cs" Line="32" Column="13" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.App6.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.9525F716-F7B5-4F6C-B09E-1BEFA2156001" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.App6.Android PreferredExecutionTarget="Android.Android_Accelerated_Oreo" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
+  <MultiItemStartupConfigurations />
+</Properties>

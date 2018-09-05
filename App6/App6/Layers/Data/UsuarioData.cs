@@ -16,7 +16,13 @@ namespace App6.Layers.Data
                 {
                     IdUsuario = 1,
                     Usuario = _usuario,
-                    Senha = _senha
+                    Senha = _senha,
+                    Nome = "Administrador",
+                    Sobrenome = "Administrativo",
+                    Email = "admin@admin.com.br",
+                    Cpf = "123.123.123-00",
+                    Telefone = 1188880000
+
                 };
                 return _user;
             }

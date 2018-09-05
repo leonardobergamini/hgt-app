@@ -1,9 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="App6.Views.PerfilPage" 
-             xmlns:vm="clr-namespace:HGT.ViewModels"
+             xmlns:vm="clr-namespace:App6.ViewModels"
              Title="Perfil">
+    
+    <ContentPage.BindingContext> 
+        <vm:PerfilViewModel/>
+    </ContentPage.BindingContext>
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <!--Page Level Resources: Compatibile with Xamarin Live Player -->
@@ -21,35 +26,35 @@
             <!--BackgroundColor="{StaticResource Accent}" -->
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                 <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="Logo-Default.png" VerticalOptions="Center" HeightRequest="94"/>
-
+                    <Image Source="Logo-Default.png" VerticalOptions="CenterAndExpand" HeightRequest="94"/>
                 </ContentView>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Label Text="{Binding Username}" FontSize="Small" FontAttributes="Bold" VerticalOptions="FillAndExpand"/>
             </StackLayout>
         </StackLayout>
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="Nome:" />
-                                <Span Text="\n " />
-                                <Span Text="E-mail: " />
-                                <Span Text=" " />
-                                <Span Text="Celular: " />
-                                <Span Text=" " />
-                                <Span Text="Data de nascimento: " />
-                                <Span Text=" " />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                <Label Text="Nome:" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="{Binding NomeCompleto}" />
+                <Label Text="E-mail:" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="{Binding Email}"/>
+                <Label Text="Telefone:" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="{Binding Telefone}"/>
+                
                 <Button Margin="0,10,0,0" 
                         VerticalOptions="End"
                         Text="Sair" 
                         BackgroundColor="{StaticResource Primary}" 
                         TextColor="White" 
                         Clicked="ClickedBotaoSair"/>
+                
+                <Button Margin="0,10,0,0" 
+                        VerticalOptions="End"
+                        Text="Testar" 
+                        BackgroundColor="{StaticResource Primary}" 
+                        TextColor="White" 
+                        Clicked="ClickedBotaoTestar"/>
             </StackLayout>
         </ScrollView>
     </Grid>
