@@ -22,9 +22,15 @@ namespace App6.Views
         public ItemsPage()
         {
             InitializeComponent();
+            ItemsListView.ItemTapped += async (sender, e) =>
+            {
+                if (e.Item == null)
+                    return;
+                Global.Ticket = (TicketModel)e.Item;
+                await Navigation.PushAsync(new ItemDetailPage());
+            };
 
-            var ListaTickets = new TicketBusiness().GetList();
-            ItemsListView.ItemsSource = ListaTickets;
+            
         }
     }
 }

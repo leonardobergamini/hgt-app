@@ -1,7 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
-             x:Class="App6.Views.ItemDetailPage"  Title="{Binding Title}">
+             x:Class="App6.Views.ItemDetailPage"  Title="{Binding Ticket.Nome}"
+             xmlns:vm="clr-namespace:App6.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:ItemDetailViewModel></vm:ItemDetailViewModel>
+    </ContentPage.BindingContext>
     <ContentPage.Resources>
         <ResourceDictionary>
             <!--Page Level Resources: Compatibile with Xamarin Live Player -->
@@ -24,27 +28,9 @@
         </StackLayout>
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
-                <Label FontSize="22">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="Nome do evento" FontAttributes="Bold" FontSize="22" />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Nulla laoreet tincidunt sem cursus pharetra. 
-                                Quisque lorem tellus, gravida aliquet nibh sed, 
-                                egestas sagittis justo. Phasellus congue dapibus posuere"/>
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                <Label Text="{Binding Ticket.Nome}" x:Name="LabelNome" FontAttributes="Bold" FontSize="22" />
+                <Label Text="{Binding Ticket.Descricao}"/>
+                <Image Source="qr_code.png" VerticalOptions="Center"/>
                 <Button Margin="0,10,0,0" 
                         Text="Alterar a titularidade" 
                         BackgroundColor="{StaticResource Primary}" 

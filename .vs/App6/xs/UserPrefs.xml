@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{F2CD69AB-080A-4490-946D-EEDFCEECA1B4}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="App6/App6/Views/ItemsPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="App6/App6/ViewModels/ItemDetailViewModel.cs">
     <Files>
-      <File FileName="App6/App6/Views/ItemsPage.xaml" Line="15" Column="44" />
-      <File FileName="App6/App6/ViewModels/ItemsViewModel.cs" Line="35" Column="13" />
-      <File FileName="App6/App6/Layers/Data/TicketData.cs" Line="16" Column="69" />
-      <File FileName="App6/App6/Layers/Business/TicketBusiness.cs" Line="14" Column="59" />
-      <File FileName="App6/App6/Views/ItemsPage.xaml.cs" Line="32" Column="13" />
+      <File FileName="App6/App6/Views/ItemsPage.xaml.cs" Line="33" Column="53" />
+      <File FileName="App6/App6/Views/ItemsPage.xaml" Line="18" Column="33" />
+      <File FileName="App6/App6/Views/ItemDetailPage.xaml.cs" Line="15" Column="4" />
+      <File FileName="App6/App6/Views/ItemDetailPage.xaml" Line="27" Column="63" />
+      <File FileName="App6/App6/ViewModels/ItemDetailViewModel.cs" Line="12" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

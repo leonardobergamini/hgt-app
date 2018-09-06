@@ -30,3 +30,4 @@ C:/Users/lucia/source/repos/App6/App6/App6/obj/Debug/netstandard2.0/Views/Perfil
 /Users/leonardo/projetos/hgt-app/App6/App6/obj/Debug/netstandard2.0/XamlC.stamp
 /Users/leonardo/projetos/hgt-app/App6/App6/obj/Debug/netstandard2.0/App6.dll
 /Users/leonardo/projetos/hgt-app/App6/App6/obj/Debug/netstandard2.0/App6.pdb
+/Users/leonardo/projetos/hgt-app/App6/App6/obj/Debug/netstandard2.0/Views/TitularidadePage.xaml.g.cs

@@ -11,10 +11,13 @@ namespace App6.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemDetailPage : ContentPage
     {
+
         public ItemDetailPage()
         {
             InitializeComponent();
 
         }
+
+
     }
 }
