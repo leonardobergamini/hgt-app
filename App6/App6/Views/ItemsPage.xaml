@@ -13,14 +13,14 @@
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="ItemsListView" 
-                      VerticalOptions="FillAndExpand"
+                      Margin="30"
                       RowHeight="100"
                       ItemsSource="{Binding ListaTickets}"
                       HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
+                            <StackLayout HorizontalOptions="CenterAndExpand" Padding="10">
                                 <Label Text="{Binding Nome}" 
                                        LineBreakMode="NoWrap" 
                                        FontSize="16"/>

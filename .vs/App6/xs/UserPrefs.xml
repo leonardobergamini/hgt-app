@@ -1,15 +1,11 @@
 ﻿<Properties StartupConfiguration="{F2CD69AB-080A-4490-946D-EEDFCEECA1B4}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="App6/App6/ViewModels/ItemDetailViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="App6/App6/Views/ItemsPage.xaml">
     <Files>
-      <File FileName="App6/App6/Views/ItemsPage.xaml.cs" Line="33" Column="53" />
-      <File FileName="App6/App6/Views/ItemsPage.xaml" Line="18" Column="33" />
-      <File FileName="App6/App6/Views/ItemDetailPage.xaml.cs" Line="15" Column="4" />
-      <File FileName="App6/App6/Views/ItemDetailPage.xaml" Line="27" Column="63" />
-      <File FileName="App6/App6/ViewModels/ItemDetailViewModel.cs" Line="12" Column="10" />
+      <File FileName="App6/App6/Views/ItemsPage.xaml" Line="23" Column="89" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.App6.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.9525F716-F7B5-4F6C-B09E-1BEFA2156001" />
+  <MonoDevelop.Ide.ItemProperties.App6.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.9525F716-F7B5-4F6C-B09E-1BEFA2156001" automaticSigning="False" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

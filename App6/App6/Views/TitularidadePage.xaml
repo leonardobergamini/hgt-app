@@ -3,9 +3,36 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="App6.Views.TitularidadePage"
              Title="Alteração de titularidade">
-    <ContentPage.Content>
-        <StackLayout>
-            <Button Text="" />
-        </StackLayout>
-    </ContentPage.Content>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--Page Level Resources: Compatibile with Xamarin Live Player -->
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout VerticalOptions="Center" Margin="64">
+        
+        <Entry Placeholder="Primeiro nome" x:Name="EntryPrimeiroNome" 
+               Text="{Binding PrimeiroNome}"/>
+        <Entry Placeholder="Sobrenome" x:Name="EntrySobrenome" 
+               Text="{Binding Sobrenome}" />
+        <Entry Placeholder="Data de nascimento" x:Name="EntryDtNascimento" 
+               Text="{Binding DataNascimento}" />
+        <Entry Placeholder="CPF" x:Name="EntryCPF" 
+               Text="{Binding CPF}" />
+        <Entry Placeholder="Telefone" x:Name="EntryTelefone" 
+               Text="{Binding Telefone}" />
+        <Entry Placeholder="E-mail" x:Name="EntryEmail" 
+               Text="{Binding Email}" />
+
+        <Button Margin="0,10,0,0" Text="Alterar" 
+                x:Name="BotaoAlterar"
+                BackgroundColor="{StaticResource Primary}" 
+                TextColor="White" />
+
+    </StackLayout>
+
 </ContentPage>

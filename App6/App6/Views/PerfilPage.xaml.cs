@@ -22,14 +22,5 @@ namespace App6.Views
         {
             App.Current.MainPage = new LoginPage();
         }
-
-        public void ClickedBotaoTestar(Object o, EventArgs e)
-        {
-            /*var ticketData = new TicketBusiness().GetList();
-            IList<TicketModel> ListaTickets = ticketData;
-
-            Console.WriteLine(ticketData[0].Nome);
-            Console.WriteLine(ticketData.Count);*/
-        }
     }
 }

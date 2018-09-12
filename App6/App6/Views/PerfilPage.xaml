@@ -26,7 +26,7 @@
             <!--BackgroundColor="{StaticResource Accent}" -->
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                 <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="Logo-Default.png" VerticalOptions="CenterAndExpand" HeightRequest="94"/>
+                    <Image Source="foto-perfil-default.png" VerticalOptions="CenterAndExpand" HeightRequest="94"/>
                 </ContentView>
             </StackLayout>
             <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
@@ -41,6 +41,8 @@
                 <Label Text="{Binding Email}"/>
                 <Label Text="Telefone:" FontSize="Medium" FontAttributes="Bold"/>
                 <Label Text="{Binding Telefone}"/>
+                <Label Text="Data de nascimento:" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="{Binding DtNascimento}"/>
                 
                 <Button Margin="0,10,0,0" 
                         VerticalOptions="End"
@@ -48,13 +50,7 @@
                         BackgroundColor="{StaticResource Primary}" 
                         TextColor="White" 
                         Clicked="ClickedBotaoSair"/>
-                
-                <Button Margin="0,10,0,0" 
-                        VerticalOptions="End"
-                        Text="Testar" 
-                        BackgroundColor="{StaticResource Primary}" 
-                        TextColor="White" 
-                        Clicked="ClickedBotaoTestar"/>
+
             </StackLayout>
         </ScrollView>
     </Grid>

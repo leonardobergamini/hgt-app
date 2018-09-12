@@ -14,15 +14,16 @@ namespace App6.ViewModels
         public String Sobrenome { get; set; }
         public String NomeCompleto { get; set; }
         public String Email { get; set; }
-        public int Telefone { get; set; }
+        public long Telefone { get; set; }
         public String Username { get; set; }
+        public String DtNascimento { get; set; }
         public PerfilViewModel()
         {
             NomeCompleto = Global.Usuario.Nome + " " + Global.Usuario.Sobrenome;
             Email = Global.Usuario.Email;
             Telefone = Global.Usuario.Telefone;
             Username = "@"+Global.Usuario.Usuario;
-
+            DtNascimento = String.Format("{0:dd/MM/yyyy}", Global.Usuario.Dt_nascimento);
         }
 
 

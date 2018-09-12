@@ -12,24 +12,14 @@ namespace App6.Layers.Business
         {
             var usuarioData = new UsuarioData();
             var usuario = usuarioData.GetLogin(_usuario, _senha);
-            if (usuario != null)
-            {
-                usuario = usuarioData.Get(usuario.IdUsuario);
+            if (usuario == null)
+            {            
+               throw new Exception("Usuário ou senha inválida");
             }
             else
             {
-                var usuarioService = new UsuarioServices();
-                usuario = usuarioService.GetLogin(_usuario, _senha);
-                if (usuario != null)
-                {
-                    usuario = usuarioService.Get(usuario.IdUsuario);
-                }
-                else
-                {
-                    throw new Exception("Usuário ou senha inválida");
-                }
+                return usuario;
             }
-            return usuario;
         }
     }
 }

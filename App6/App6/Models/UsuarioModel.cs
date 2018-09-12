@@ -15,7 +15,7 @@ namespace App6.Models
         public DateTime Dt_nascimento { get; set; }
         public String Cpf { get; set; }
         public String Email { get; set; }
-        public int Telefone { get; set; }
+        public long Telefone { get; set; }
         public String Usuario { get; set; }
         public String Senha { get; set; }
 

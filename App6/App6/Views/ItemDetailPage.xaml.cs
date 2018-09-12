@@ -18,6 +18,10 @@ namespace App6.Views
 
         }
 
+        async void AlterarClickedButton(Object o, EventArgs e){
+            await Navigation.PushAsync(new TitularidadePage());
+        }
+
 
     }
 }

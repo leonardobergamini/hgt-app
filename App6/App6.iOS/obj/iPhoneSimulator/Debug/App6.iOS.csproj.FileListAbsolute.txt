@@ -65,11 +65,6 @@
 /Users/leonardo/projetos/hgt-app/App6/App6.iOS/bin/iPhoneSimulator/Debug/SQLitePCLRaw.batteries_v2.dll
 /Users/leonardo/projetos/hgt-app/App6/App6.iOS/bin/iPhoneSimulator/Debug/SQLitePCLRaw.core.dll
 /Users/leonardo/projetos/hgt-app/App6/App6.iOS/bin/iPhoneSimulator/Debug/SQLitePCLRaw.provider.sqlite3.dll
-/Users/leonardo/projetos/hgt-app/App6/App6.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/Default-568h@2x.png
-/Users/leonardo/projetos/hgt-app/App6/App6.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/Default-Portrait.png
-/Users/leonardo/projetos/hgt-app/App6/App6.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/Default-Portrait@2x.png
-/Users/leonardo/projetos/hgt-app/App6/App6.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/Default.png
-/Users/leonardo/projetos/hgt-app/App6/App6.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/Default@2x.png
 /Users/leonardo/projetos/hgt-app/App6/App6.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/Logo-Default.png
 /Users/leonardo/projetos/hgt-app/App6/App6.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/qr_code.png
 /Users/leonardo/projetos/hgt-app/App6/App6.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/tab_about.png
@@ -84,3 +79,7 @@
 /Users/leonardo/projetos/hgt-app/App6/App6.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/xamarin_logo.png
 /Users/leonardo/projetos/hgt-app/App6/App6.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/xamarin_logo@2x.png
 /Users/leonardo/projetos/hgt-app/App6/App6.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/xamarin_logo@3x.png
+/Users/leonardo/projetos/hgt-app/App6/App6.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/bg-login.png
+/Users/leonardo/projetos/hgt-app/App6/App6.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/hgt-logo.png
+/Users/leonardo/projetos/hgt-app/App6/App6.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/foto-perfil-default.png
+/Users/leonardo/projetos/hgt-app/App6/App6.iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.4/optimized/logo-hgt.png
