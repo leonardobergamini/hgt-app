@@ -7,7 +7,7 @@ namespace App6.Layers.Data
     public class UsuarioData : ContentPage
     {
 
-        public UsuarioModel GetLogin(String _usuario, String _senha)
+        /*public UsuarioModel GetLogin(String _usuario, String _senha)
         {
 
             if (_usuario.Equals("admin") && _senha.Equals("admin"))
@@ -53,7 +53,7 @@ namespace App6.Layers.Data
                 return null;
             }
 
-        }
+        }*/
     }
 }
 

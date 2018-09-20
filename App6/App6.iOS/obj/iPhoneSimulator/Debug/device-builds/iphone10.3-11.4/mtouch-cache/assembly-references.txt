@@ -30,10 +30,9 @@
 /Users/leonardo/.nuget/packages/xamarin.forms/3.1.0.697729/lib/Xamarin.iOS10/Xamarin.Forms.Platform.iOS.dll
 /Users/leonardo/projetos/hgt-app/App6/App6/bin/Debug/netstandard2.0/App6.dll
 /Users/leonardo/.nuget/packages/xamarin.forms/3.1.0.697729/lib/Xamarin.iOS10/Xamarin.Forms.Xaml.dll
-/Users/leonardo/.nuget/packages/sqlite-net-pcl/1.4.118/lib/netstandard1.1/SQLite-net.dll
+/Users/leonardo/.nuget/packages/sqlite-net-pcl/1.5.231/lib/netstandard1.1/SQLite-net.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.14.0.14/lib/mono/Xamarin.iOS/Facades/System.Runtime.dll
-/Library/Frameworks/Xamarin.iOS.framework/Versions/11.14.0.14/lib/mono/Xamarin.iOS/Facades/System.Collections.Concurrent.dll
-/Users/leonardo/.nuget/packages/sqlitepclraw.core/1.1.5/lib/Xamarin.iOS10/SQLitePCLRaw.core.dll
+/Users/leonardo/.nuget/packages/sqlitepclraw.core/1.1.11/lib/Xamarin.iOS10/SQLitePCLRaw.core.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.14.0.14/lib/mono/Xamarin.iOS/Facades/System.Collections.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.14.0.14/lib/mono/Xamarin.iOS/Facades/System.Runtime.Extensions.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.14.0.14/lib/mono/Xamarin.iOS/Facades/System.Linq.Expressions.dll
@@ -41,8 +40,9 @@
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.14.0.14/lib/mono/Xamarin.iOS/Facades/System.Diagnostics.Debug.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.14.0.14/lib/mono/Xamarin.iOS/Facades/System.Threading.Tasks.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.14.0.14/lib/mono/Xamarin.iOS/Facades/System.Linq.dll
-/Users/leonardo/.nuget/packages/sqlitepclraw.bundle_green/1.1.5/lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll
-/Users/leonardo/.nuget/packages/sqlitepclraw.provider.sqlite3.ios_unified/1.1.5/lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll
+/Users/leonardo/.nuget/packages/sqlitepclraw.bundle_green/1.1.11/lib/Xamarin.iOS10/SQLitePCLRaw.batteries_v2.dll
+/Users/leonardo/.nuget/packages/sqlitepclraw.provider.sqlite3.ios_unified/1.1.11/lib/Xamarin.iOS10/SQLitePCLRaw.provider.sqlite3.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.14.0.14/lib/mono/Xamarin.iOS/Facades/System.Threading.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.14.0.14/lib/mono/Xamarin.iOS/Facades/System.Reflection.Extensions.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.14.0.14/lib/mono/Xamarin.iOS/Facades/System.Globalization.dll
+/Users/leonardo/.nuget/packages/newtonsoft.json/11.0.2/lib/netstandard2.0/Newtonsoft.Json.dll

@@ -10,15 +10,21 @@ namespace App6.Layers.Business
     {
         public UsuarioModel Login(String _usuario, String _senha)
         {
-            var usuarioData = new UsuarioData();
-            var usuario = usuarioData.GetLogin(_usuario, _senha);
-            if (usuario == null)
-            {            
-               throw new Exception("Usuário ou senha inválida");
-            }
-            else
-            {
-                return usuario;
+            if(_usuario == null || _usuario.Equals("") || 
+               _senha == null || _senha.Equals("")){
+                throw new Exception("Preencher todos os campos.");
+            }else{
+                try
+                {
+                    var usuarioService = new UsuarioServices();
+                    // var variavel = usuarioService.UsuarioValido(_usuario, _senha);
+                    var usuario = usuarioService.GetLogin(_usuario, _senha);
+                    return usuario;
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Usuário ou senha inválidos. Tentar novamente.");
+                }
             }
         }
     }

@@ -58,7 +58,6 @@
 /Users/leonardo/projetos/hgt-app/App6/App6.iOS/obj/iPhoneSimulator/Debug/App6.iOS.pdb
 /Users/leonardo/projetos/hgt-app/App6/App6.iOS/bin/iPhoneSimulator/Debug/Newtonsoft.Json.dll
 /Users/leonardo/projetos/hgt-app/App6/App6.iOS/bin/iPhoneSimulator/Debug/SQLite-net.dll
-/Users/leonardo/projetos/hgt-app/App6/App6.iOS/bin/iPhoneSimulator/Debug/SQLite-net.pdb
 /Users/leonardo/projetos/hgt-app/App6/App6.iOS/bin/iPhoneSimulator/Debug/SQLiteNetExtensions.dll
 /Users/leonardo/projetos/hgt-app/App6/App6.iOS/bin/iPhoneSimulator/Debug/SQLiteNetExtensions.pdb
 /Users/leonardo/projetos/hgt-app/App6/App6.iOS/bin/iPhoneSimulator/Debug/SQLitePCLRaw.batteries_green.dll

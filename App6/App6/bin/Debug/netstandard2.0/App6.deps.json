@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "aea39ce9384f09c9ec2a1b4c3bd5ba55e285b611"
+    "signature": "6a8aa2a5e6114734d9800228f8c6bb3e3634921b"
   },
   "compilationOptions": {},
   "targets": {
@@ -13,7 +13,7 @@
           "Newtonsoft.Json": "11.0.2",
           "SQLiteNetExtensions": "2.1.0",
           "Xamarin.Forms": "3.1.0.697729",
-          "sqlite-net-pcl": "1.4.118"
+          "sqlite-net-pcl": "1.5.231"
         },
         "runtime": {
           "App6.dll": {}
@@ -33,22 +33,22 @@
           }
         }
       },
-      "sqlite-net-pcl/1.4.118": {
+      "sqlite-net-pcl/1.5.231": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
-          "SQLitePCLRaw.bundle_green": "1.1.5"
+          "SQLitePCLRaw.bundle_green": "1.1.11"
         },
         "runtime": {
           "lib/netstandard1.1/SQLite-net.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.5.231.0",
+            "fileVersion": "1.5.231.0"
           }
         }
       },
       "SQLiteNetExtensions/2.1.0": {
         "dependencies": {
           "Newtonsoft.Json": "11.0.2",
-          "sqlite-net-pcl": "1.4.118"
+          "sqlite-net-pcl": "1.5.231"
         },
         "runtime": {
           "lib/netstandard1.1/SQLiteNetExtensions.dll": {
@@ -57,29 +57,29 @@
           }
         }
       },
-      "SQLitePCLRaw.bundle_green/1.1.5": {
+      "SQLitePCLRaw.bundle_green/1.1.11": {
         "dependencies": {
           "NETStandard.Library": "2.0.3",
-          "SQLitePCLRaw.core": "1.1.5"
+          "SQLitePCLRaw.core": "1.1.11"
         },
         "runtime": {
           "lib/netstandard1.1/SQLitePCLRaw.batteries_green.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.1.11.121",
             "fileVersion": "1.0.0.0"
           },
           "lib/netstandard1.1/SQLitePCLRaw.batteries_v2.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.1.11.121",
             "fileVersion": "1.0.0.0"
           }
         }
       },
-      "SQLitePCLRaw.core/1.1.5": {
+      "SQLitePCLRaw.core/1.1.11": {
         "dependencies": {
           "NETStandard.Library": "2.0.3"
         },
         "runtime": {
           "lib/netstandard1.1/SQLitePCLRaw.core.dll": {
-            "assemblyVersion": "1.0.0.0",
+            "assemblyVersion": "1.1.11.121",
             "fileVersion": "1.0.0.0"
           }
         }
@@ -129,12 +129,12 @@
       "path": "newtonsoft.json/11.0.2",
       "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
     },
-    "sqlite-net-pcl/1.4.118": {
+    "sqlite-net-pcl/1.5.231": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-66wl2z26PpA/m+hY2UJudsHF3GpbbC8Scx9WvXC0MomQxrbclkb2jiavYsXH3AEXHsTAjKIWavmwKoRIPWsdAg==",
-      "path": "sqlite-net-pcl/1.4.118",
-      "hashPath": "sqlite-net-pcl.1.4.118.nupkg.sha512"
+      "sha512": "sha512-Sy+K+Wm2RZ+4b1uLHsaXvfR92Or71XxPXa2Id6msSOVkZKh+c+PUk/HQOAgxyhm3lhvysL0mK6Gd6mI69NJ9AA==",
+      "path": "sqlite-net-pcl/1.5.231",
+      "hashPath": "sqlite-net-pcl.1.5.231.nupkg.sha512"
     },
     "SQLiteNetExtensions/2.1.0": {
       "type": "package",
@@ -143,19 +143,19 @@
       "path": "sqlitenetextensions/2.1.0",
       "hashPath": "sqlitenetextensions.2.1.0.nupkg.sha512"
     },
-    "SQLitePCLRaw.bundle_green/1.1.5": {
+    "SQLitePCLRaw.bundle_green/1.1.11": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rz+SPgp57CAWkEfCJmWqHXMd+fSqhgYmzOdjkSbCQ3OEG0I3+vUlycElvy5zTi0GAYg5pVrmRqbquotS0985CQ==",
-      "path": "sqlitepclraw.bundle_green/1.1.5",
-      "hashPath": "sqlitepclraw.bundle_green.1.1.5.nupkg.sha512"
+      "sha512": "sha512-Hqp8IF/RLjbypkLm+t+1RqAX8EKuWEkj7wkLXplfENQoPnE127cvTmaDvaQKtt7a5QsD/HNjFDr1z5f9q2wdPg==",
+      "path": "sqlitepclraw.bundle_green/1.1.11",
+      "hashPath": "sqlitepclraw.bundle_green.1.1.11.nupkg.sha512"
     },
-    "SQLitePCLRaw.core/1.1.5": {
+    "SQLitePCLRaw.core/1.1.11": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-NViT1KDYnPAQo7yoYmkAMWzT15ZjqbLTSZp9iTVwZDz7fBC5fQ9TYebOFUIxYxrD/RvBpYB8m9PtcL8x/QbKNg==",
-      "path": "sqlitepclraw.core/1.1.5",
-      "hashPath": "sqlitepclraw.core.1.1.5.nupkg.sha512"
+      "sha512": "sha512-QT17CyQAQIbTCu6pW5+uVA8BXqRzquiDI1tr5Un6c1YZcQydPmGPuYYng9xMs2UHUDYHbTu+JDkp55WR+qo9bQ==",
+      "path": "sqlitepclraw.core/1.1.11",
+      "hashPath": "sqlitepclraw.core.1.1.11.nupkg.sha512"
     },
     "Xamarin.Forms/3.1.0.697729": {
       "type": "package",
