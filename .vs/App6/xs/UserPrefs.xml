@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{F2CD69AB-080A-4490-946D-EEDFCEECA1B4}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="App6/App6/Models/UsuarioModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="App6/App6.iOS/Resources/LaunchScreen.storyboard">
     <Files>
-      <File FileName="App6/App6/Layers/Services/UsuarioServices.cs" Line="43" Column="113" />
+      <File FileName="App6/App6/Layers/Services/UsuarioServices.cs" Line="43" Column="86" />
       <File FileName="App6/App6/Layers/Business/UsuarioBusiness.cs" Line="26" Column="87" />
       <File FileName="App6/App6/Models/UsuarioModel.cs" Line="37" Column="1" />
       <File FileName="App6/App6/ViewModels/LoginViewModel.cs" Line="55" Column="10" />
+      <File FileName="App6/App6.iOS/Resources/LaunchScreen.storyboard" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.App6.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.9525F716-F7B5-4F6C-B09E-1BEFA2156001" automaticSigning="False" />
+  <MonoDevelop.Ide.ItemProperties.App6.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.17C83676-0D07-4834-A8F6-EA3D3DB2BB9F" automaticSigning="False" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
