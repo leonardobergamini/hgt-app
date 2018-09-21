@@ -1,11 +1,7 @@
 ﻿<Properties StartupConfiguration="{F2CD69AB-080A-4490-946D-EEDFCEECA1B4}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="App6/App6.iOS/Resources/LaunchScreen.storyboard">
+  <MonoDevelop.Ide.Workbench ActiveDocument="App6/App6/Layers/Services/EventoServices.cs">
     <Files>
-      <File FileName="App6/App6/Layers/Services/UsuarioServices.cs" Line="43" Column="86" />
-      <File FileName="App6/App6/Layers/Business/UsuarioBusiness.cs" Line="26" Column="87" />
-      <File FileName="App6/App6/Models/UsuarioModel.cs" Line="37" Column="1" />
-      <File FileName="App6/App6/ViewModels/LoginViewModel.cs" Line="55" Column="10" />
-      <File FileName="App6/App6.iOS/Resources/LaunchScreen.storyboard" />
+      <File FileName="App6/App6/Layers/Services/EventoServices.cs" Line="15" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -14,6 +10,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.App6.Android PreferredExecutionTarget="Android.kit_kat_4_4_-_api_19" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
+  <MonoDevelop.Ide.ItemProperties.App6.Android AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Nexus_5X_API_28_x86" />
   <MultiItemStartupConfigurations />
 </Properties>

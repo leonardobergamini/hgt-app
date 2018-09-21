@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App6.Android", "App6\App6.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App6.iOS", "App6\App6.iOS\App6.iOS.csproj", "{F2CD69AB-080A-4490-946D-EEDFCEECA1B4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "App6", "App6\App6\App6.csproj", "{AEFFF044-A98D-4DFC-BE52-8EF8288A3A0E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App6", "App6\App6\App6.csproj", "{AEFFF044-A98D-4DFC-BE52-8EF8288A3A0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -40,7 +40,7 @@ namespace App6.Layers.Services
             var _urlAccountApi = _url + "/services/data/v43.0/query/?q=SELECT+Id" +
                                         "+,+Nome__c+,+Sobrenome__c+,+Dt_nascimento__c+,+CPF__c+,+E_mail__c+,+Celular__c+,+RG__c" +
                                         "+,+Nm_Usuario__c +,+Senha__c + FROM+Conta__c+" +
-                                       "WHERE+Nm_Usuario__c+LIKE+'" + _usuario + "'";
+                "WHERE+Nm_Usuario__c+LIKE+'" + _usuario + "'+AND+Senha__c+LIKE+'" + _senha + "'";
 
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization =

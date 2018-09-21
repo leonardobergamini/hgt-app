@@ -156,7 +156,7 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+    <PackageReference Include="Xamarin.Forms" Version="3.2.0.839982" />
     <PackageReference Include="SQLiteNetExtensions">
       <Version>2.1.0</Version>
     </PackageReference>
@@ -198,5 +198,9 @@
     <BundleResource Include="Resources\hgt-logo.png" />
     <BundleResource Include="Resources\foto-perfil-default.png" />
     <BundleResource Include="Resources\logo-hgt.png" />
+    <BundleResource Include="Resources\rogerWaters.jpg" />
+    <BundleResource Include="Resources\skank.jpg" />
+    <BundleResource Include="Resources\luluSantos.jpg" />
+    <BundleResource Include="Resources\kasabian.jpg" />
   </ItemGroup>
 </Project>
