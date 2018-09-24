@@ -20,11 +20,11 @@ namespace App6.ViewModels
 
         public PerfilViewModel()
         {
-            NomeCompleto = Global.Usuario.Nome__c + " " + Global.Usuario.Sobrenome__c;
-            Email = Global.Usuario.E_mail__c;
-            Telefone = Global.Usuario.Celular__c;
-            Username = "@"+Global.Usuario.Nm_Usuario__c;
-            DtNascimento = Global.Usuario.Dt_nascimento__c;
+            NomeCompleto = Global.Usuario.PrimeiroNome + " " + Global.Usuario.Sobrenome;
+            Email = Global.Usuario.Email;
+            Telefone = Global.Usuario.Telefone;
+            Username = "@"+Global.Usuario.NmUsuario;
+            DtNascimento = Global.Usuario.DtNascimento;
         }
 
 

@@ -16,31 +16,22 @@ namespace App6.ViewModels
 {
     public class ItemsViewModel
     {
-     
+
         public ItemsViewModel()
         {
-            /*List<TicketModel> ListaTickets = new List<TicketModel>{
-                new TicketModel(Id = 1, Preco = 50.0, Codigo = "A23", Nome = "Evento#1", Descricao = "Descrição#1"),
-                new TicketModel(Id = 2, Preco = 75.0, Codigo = "F15", Nome = "Evento#2", Descricao = "Descrição#2"),
-                new TicketModel(Id = 3, Preco = 150.0, Codigo = "H17", Nome = "Evento#3", Descricao = "Descrição#3")
-            };*/
-
-             ListaTickets = new TicketBusiness().GetList();
-            
+            ListaEventos = new EventoBusiness().GetEventos();
+            //ListaEventos = new TicketBusiness().GetAllTicketByUsuario(Global.Usuario);
 
         }
-        private IList<TicketModel> listaTickets;
-        public IList<TicketModel> ListaTickets{
+        private IList<EventoModel> listaEvento;
+        public IList<EventoModel> ListaEventos{
             get{
-                return listaTickets;
+                return listaEvento;
             }
             set{
-                listaTickets = value;
+                listaEvento = value;
             }
         }
-
-
-
 
     }
 }

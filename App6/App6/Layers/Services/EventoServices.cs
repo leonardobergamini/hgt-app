@@ -5,9 +5,10 @@ namespace App6.Layers.Services
 {
     public class EventoServices
     {
-        public EventoModel GetEvento(String _id){
-            if(_id.Equals("1")){
-                var _evento = new EventoModel
+        public EventoModel GetEvento(String _idLocal){
+            var _evento = new EventoModel();
+            if (_idLocal.Equals("1")){
+                _evento = new EventoModel
                 {
                     IdEvento = "1",
                     NomeEvento = "KASABIAN",
@@ -19,11 +20,11 @@ namespace App6.Layers.Services
                     DtFinalVenda = new DateTime(2018, 09, 10),
                     UrlImagem = "kasabian.jpg",
                     FaixaEtaria = new FaixaEtariaServices().GetFaixaEtaria("1"),
-                    LocalModel = new LocalServices().GetLocal("2")
+                    Local = new LocalServices().GetLocal("1")
                 };
-                return _evento;
-            }else if(_id.Equals("2")){
-                var _evento = new EventoModel
+            }
+            if(_idLocal.Equals("2")){
+                _evento = new EventoModel
                 {
                     IdEvento = "2",
                     NomeEvento = "ROGER WATERS",
@@ -36,11 +37,11 @@ namespace App6.Layers.Services
                     DtFinalVenda = new DateTime(2018, 12, 10),
                     UrlImagem = "rogerWaters.jpg",
                     FaixaEtaria = new FaixaEtariaServices().GetFaixaEtaria("2"),
-                    LocalModel = new LocalServices().GetLocal("2")
+                    Local = new LocalServices().GetLocal("2")
                 };
-                return _evento;
-            }else if(_id.Equals("3")){
-                var _evento = new EventoModel
+            }
+            if(_idLocal.Equals("3")){
+                _evento = new EventoModel
                 {
                     IdEvento = "3",
                     NomeEvento = "SKANK",
@@ -53,11 +54,11 @@ namespace App6.Layers.Services
                     DtFinalVenda = new DateTime(2018, 05, 10),
                     UrlImagem = "skank.jpg",
                     FaixaEtaria = new FaixaEtariaServices().GetFaixaEtaria("1"),
-                    LocalModel = new LocalServices().GetLocal("1")
+                    Local = new LocalServices().GetLocal("1")
                 };
-                return _evento;
-            }else if(_id.Equals("4")){
-                var _evento = new EventoModel
+            }
+            if(_idLocal.Equals("4")){
+                _evento = new EventoModel
                 {
                     IdEvento = "4",
                     NomeEvento = "LULU SANTOS",
@@ -69,16 +70,10 @@ namespace App6.Layers.Services
                     DtFinalVenda = new DateTime(2018, 05, 10),
                     UrlImagem = "luluSantos.jpg",
                     FaixaEtaria = new FaixaEtariaServices().GetFaixaEtaria("1"),
-                    LocalModel = new LocalServices().GetLocal("1")
+                    Local = new LocalServices().GetLocal("1")
                 };
-                return _evento;
-            }else{
-                return null;
             }
-        }
-
-        public EventoServices()
-        {
+            return _evento;
         }
     }
 }

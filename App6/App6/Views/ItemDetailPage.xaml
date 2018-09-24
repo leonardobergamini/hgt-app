@@ -4,7 +4,7 @@
              x:Class="App6.Views.ItemDetailPage"  Title="{Binding Ticket.Nome}"
              xmlns:vm="clr-namespace:App6.ViewModels">
     <ContentPage.BindingContext>
-        <vm:ItemDetailViewModel></vm:ItemDetailViewModel>
+        <vm:ItemDetailViewModel/>
     </ContentPage.BindingContext>
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -21,17 +21,24 @@
         </Grid.RowDefinitions>
         <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
-                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
+                <ContentView>
+                    <Image Source="{Binding Evento.UrlImagem}" HeightRequest="120"/>
                 </ContentView>
             </StackLayout>
         </StackLayout>
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
-                <Label Text="{Binding Ticket.Nome}" x:Name="LabelNome" FontAttributes="Bold" FontSize="22" />
-                <Label Text="{Binding Ticket.Descricao}"/>
-                <Label Text="{Binding Ticket.Preco}"/>
-                <Image Source="qr_code.png" VerticalOptions="Center"/>
+                <Label Text="{Binding Evento.NomeEvento}" x:Name="LabelNome" FontAttributes="Bold" FontSize="22" />
+                <Label Text="{Binding Evento.FaixaEtaria.NomeFaixaEtaria, StringFormat='Classificação: {0:F0}'}" 
+                       FontSize="Small"/>
+                <Label Text="Descrição: "/>
+                <Label Text="{Binding Evento.Descricao}"/>
+                <Label Text="{Binding Evento.DtInicioEvento}"/>
+                <Label Text="{Binding Evento.DtFinalEvento}"/>
+                <Label Text="{Binding Ticket.Preco, StringFormat='R$ {0:F0}'}" FontSize="Medium" FontAttributes="Bold"/>
+                <Button BackgroundColor="Black" HeightRequest="1"/>
+                <Label Text="Meu ingresso:" FontSize="Large" FontAttributes="Bold"/>
+                <Image Source="{Binding Ticket.UrlQrCode}" VerticalOptions="Center"/>
                 <Button Margin="0,10,0,0" 
                         Text="Alterar a titularidade" 
                         BackgroundColor="{StaticResource Primary}" 

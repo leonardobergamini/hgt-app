@@ -14,5 +14,15 @@ namespace App6.Models
 
         }
 
+
+        public TicketModel(string idTicket, double preco, string codIngresso, string urlQrCode, SetorModel setor)
+        {
+            this.IdTicket = idTicket;
+            this.Preco = preco;
+            this.CodIngresso = codIngresso;
+            this.UrlQrCode = urlQrCode;
+            this.Setor = setor;
+        }
+
     }
 }

@@ -6,12 +6,12 @@ namespace App6.Layers.Services
 {
     public class APIConfig
     {
-        static String securityKey = "Hk3Z4XmQjFOyOGHUEgqmDUUC";
-        static String clientSecret = "1305799021171533032";
-        static String clientId = "3MVG9zlTNB8o8BA3rgXhHthKCwzZDvZtXGphpAOExvWOqmwKlWP0kYsKifG0jdFXnEsXDSkanRbTHyOS_8e9Q";
+        static String securityKey = "e9PniOXjngD9zsdKYH5zVZWA";
+        static String clientSecret = "365439225014601628";
+        static String clientId = "3MVG9zlTNB8o8BA35PlESwZ1230xTA.0LK9DiQ89GCVjyuovnQbhd7uXARjm3pycVP8fGZfiCMfoiv34S2BwM";
         static String grantAcess = "password";
-        static String userName = "leonardo@fiap.com";
-        static String password = "Bergamini@2018" + securityKey;
+        static String userName = "alantor.xs@gmail.com";
+        static String password = "Xtreme@4546" + securityKey;
         public String urlSalesForceAuth = "https://login.salesforce.com/services/oauth2/token";
 
         public String access_token { get; set; }

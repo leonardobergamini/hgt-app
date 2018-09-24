@@ -12,7 +12,7 @@ namespace App6.Models
         public DateTime DtFinalVenda { get; set;}
         public String UrlImagem { get; set; }
         public FaixaEtariaModel FaixaEtaria { get; set; }
-        public LocalModel LocalModel { get; set; }
+        public LocalModel Local { get; set; }
 
 
         public EventoModel()

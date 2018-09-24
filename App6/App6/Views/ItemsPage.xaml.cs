@@ -26,7 +26,7 @@ namespace App6.Views
             {
                 if (e.Item == null)
                     return;
-                Global.Ticket = (TicketModel)e.Item;
+                Global.Evento = (EventoModel) e.Item;
                 await Navigation.PushAsync(new ItemDetailPage());
             };
 

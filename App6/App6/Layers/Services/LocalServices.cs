@@ -5,9 +5,10 @@ namespace App6.Layers.Services
 {
     public class LocalServices
     {
-        public LocalModel GetLocal(String _id){
-            if (_id.Equals("1")){
-                var _local = new LocalModel
+        public LocalModel GetLocal(String _idLocal){
+            var _local = new LocalModel();
+            if (_idLocal.Equals("1")){
+                _local = new LocalModel
                 {
                     IdLocal = "1",
                     NomeLocal = "Local de Evento #1",
@@ -21,11 +22,10 @@ namespace App6.Layers.Services
                     UF = "SP"
 
                 };
-                return _local;
             }
-            if (_id.Equals("2"))
+            if (_idLocal.Equals("2"))
             {
-                var _local = new LocalModel
+                _local = new LocalModel
                 {
                     IdLocal = "2",
                     NomeLocal = "Local de Evento #2",
@@ -38,14 +38,9 @@ namespace App6.Layers.Services
                     Cidade = "São Paulo",
                     UF = "SP"
                 };
-                return _local;
-            }else{
-                return null;
             }
-        }
 
-        public LocalServices()
-        {
+            return _local;
         }
     }
 }
