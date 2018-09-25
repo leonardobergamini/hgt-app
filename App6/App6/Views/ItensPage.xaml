@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="App6.Views.ItemsPage" 
+             x:Class="App6.Views.ItensPage" 
              xmlns:vm="clr-namespace:App6.ViewModels"
-             x:Name="BrowseItemsPage"
+             x:Name="BrowseItensPage"
              Title="Meus ingressos">
     
     <ContentPage.BindingContext> 
-        <vm:ItemsViewModel/>
+        <vm:ItensViewModel/>
     </ContentPage.BindingContext>
     
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="ItemsListView" 
+            <ListView x:Name="ItensListView" 
                       Margin="30"
                       RowHeight="300"
-                      ItemsSource="{Binding ListaEventos}"
+                      ItemsSource="{Binding ListaPedido}"
                       SeparatorVisibility="None"
                       HasUnevenRows="true">
                 <ListView.ItemTemplate>
@@ -25,33 +25,36 @@
                                          Margin="0,10,0,10"
                                          Padding="0">
                                 <ContentView >
-                                    <Image Source="{Binding UrlImagem}"/>
+                                    <Image Source="{Binding Evento.UrlImagem}"/>
                                 </ContentView>
                                 <Button WidthRequest="1" HeightRequest="1" BackgroundColor="Black"/>
                                 <Label Text=""/>
                                 <Label Text=""/>
-                                <Label Text="{Binding NomeEvento}" 
+                                <Label Text="{Binding IdPedido}" 
+                                       LineBreakMode="NoWrap"
+                                       FontSize="20"/>
+                                <Label Text="{Binding Evento.NomeEvento}" 
                                        LineBreakMode="NoWrap"
                                        FontSize="20"/>
                                 <Label Text="Ínicio do evento:" 
                                        LineBreakMode="NoWrap"
                                        FontSize="13" 
                                        FontAttributes="Bold"/>
-                                <Label Text="{Binding DtInicioEvento}" 
+                                <Label Text="{Binding Evento.DtInicioEvento}" 
                                        LineBreakMode="NoWrap"
-                                   FontSize="13" />
+                                       FontSize="13" />
                                 <Label Text="Fim do evento: " 
                                        LineBreakMode="NoWrap"
                                        FontSize="13" 
                                        FontAttributes="Bold"/>
-                                <Label Text="{Binding DtFinalEvento}" 
+                                <Label Text="{Binding Evento.DtFinalEvento}" 
                                        LineBreakMode="NoWrap"
-                                   FontSize="13" />
+                                       FontSize="13" />
                                 <Label Text="Local" 
                                        LineBreakMode="NoWrap"
                                        FontSize="13" 
                                        FontAttributes="Bold"/>
-                                <Label Text="{Binding Local.NomeLocal}" 
+                                <Label Text="{Binding Ticket.Setor.Local.NomeLocal}" 
                                        LineBreakMode="NoWrap"
                                    FontSize="13" />
                                 

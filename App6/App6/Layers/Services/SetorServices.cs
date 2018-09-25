@@ -7,6 +7,7 @@ namespace App6.Layers.Services
     public class SetorServices
     {
         public SetorModel GetSetor (String _idSetor){
+
             var _setor = new SetorModel();
             if (_idSetor.Equals("1"))
             {
@@ -15,7 +16,7 @@ namespace App6.Layers.Services
                 {
                     IdSetor = "1",
                     NomeSetor = "Setor A",
-                    Descricao = "Descrição do Setor A",
+                    Descricao = "Descrição do Setor A do Local #1",
                     CapacidadeTotalSetor = 20000,
                     CapacidadeUsadaSetor = 18500,
                     Local = _local
@@ -27,23 +28,37 @@ namespace App6.Layers.Services
                 _setor = new SetorModel
                 {
                     IdSetor = "2",
-                    NomeSetor = "Setor B",
-                    Descricao = "Descrição do Setor B",
-                    CapacidadeTotalSetor = 29000,
-                    CapacidadeUsadaSetor = 28500,
+                    NomeSetor = "Setor A",
+                    Descricao = "Descrição do Setor A do Local #2",
+                    CapacidadeTotalSetor = 40000,
+                    CapacidadeUsadaSetor = 39000,
                     Local = _local
                 };
             }
             if (_idSetor.Equals("3"))
             {
-                var _local = new LocalServices().GetLocal("2");
+                var _local = new LocalServices().GetLocal("3");
                 _setor = new SetorModel
                 {
                     IdSetor = "3",
                     NomeSetor = "Setor A",
-                    Descricao = "Descrição do Setor A",
-                    CapacidadeTotalSetor = 40000,
-                    CapacidadeUsadaSetor = 38500,
+                    Descricao = "Descrição do Setor A do Local #3",
+                    CapacidadeTotalSetor = 12000,
+                    CapacidadeUsadaSetor = 11500,
+                    Local = _local
+                };
+            }
+
+            if (_idSetor.Equals("4"))
+            {
+                var _local = new LocalServices().GetLocal("4");
+                _setor = new SetorModel
+                {
+                    IdSetor = "4",
+                    NomeSetor = "Setor A",
+                    Descricao = "Descrição do Setor A do Local #4",
+                    CapacidadeTotalSetor = 8000,
+                    CapacidadeUsadaSetor = 7000,
                     Local = _local
                 };
             }
@@ -117,8 +132,5 @@ namespace App6.Layers.Services
 
         }
 
-        public SetorServices()
-        {
-        }
     }
 }

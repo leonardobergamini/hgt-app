@@ -17,7 +17,7 @@ namespace App6.Layers.Business
             Global.Pedidos = _pedidos;
 
             List<TicketModel> _tickets = new List<TicketModel>();
-            List<ItensPedidoModel> _itensPedido = new List<ItensPedidoModel>();
+            List<ItemPedidoModel> _itensPedido = new List<ItemPedidoModel>();
             List<SetorModel> _setores = new List<SetorModel>();
             List<LocalModel> _locais = new List<LocalModel>();
             List<EventoModel> _eventos = new List<EventoModel>();
@@ -29,11 +29,11 @@ namespace App6.Layers.Business
                 _setores.Clear();
                 _locais.Clear();
 
-                _itensPedido = new ItensPedidoServices().GetAllItensByPedido(pedido);
+                _itensPedido = new ItemPedidoServices().GetAllItensByPedido(pedido);
 
                 foreach (var item in _itensPedido)
                 {
-                    var _ticketSub = new TicketServices().GetTickets(item.IdItemPedido, pedido.IdPedido);
+                    var _ticketSub = new TicketServices().GetTicket(item.IdItemPedido, pedido.IdPedido);
                     _tickets.Add(_ticketSub);
                 }
                 foreach (var ticket in _tickets)
@@ -50,7 +50,7 @@ namespace App6.Layers.Business
                     _setores.Clear();
                     foreach (var local in _locais)
                     {
-                        var _evento = new EventoServices().GetEvento(local.IdLocal);
+                        var _evento = new EventoServices().GetEventoByLocal(local.IdLocal);
                         _eventos.Add(_evento);
 
                     }
@@ -59,6 +59,13 @@ namespace App6.Layers.Business
             }
             //Global.Eventos = _eventos;
             return _eventos;
+        }
+
+        public EventoModel GetEventoByIdLocal(String _idLocal){
+
+            var _evento = new EventoServices().GetEventoByLocal(_idLocal);
+
+            return _evento;
         }
     }
 }

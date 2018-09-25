@@ -8,7 +8,7 @@ namespace App6.Layers.Services
 {
     public class TicketServices
     {
-        public TicketModel GetTickets(String _idItem, String _idPedido){
+        public TicketModel GetTicket(String _idItem, String _idPedido){
 
             TicketModel _tickets = new TicketModel();
 
@@ -51,27 +51,15 @@ namespace App6.Layers.Services
                 };
                 _tickets = _ticket;
             }
-            if(_idItem.Equals("4") && _idPedido.Equals("P-0002")){
-                var _setor = new SetorServices().GetSetor("1");
-                var _ticket = new TicketModel()
-                {
-
-                    IdTicket = "4",
-                    CodIngresso = "A45",
-                    Preco = 75.0,
-                    UrlQrCode = "qr_code.png",
-                    Setor = _setor
-                };
-                _tickets = _ticket;
-            }
-            if(_idItem.Equals("5") && _idPedido.Equals("P-0001")){
+            if (_idItem.Equals("4") && _idPedido.Equals("P-0001"))
+            {
                 var _setor = new SetorServices().GetSetor("3");
                 var _ticket = new TicketModel()
                 {
 
-                    IdTicket = "5",
-                    CodIngresso = "B31",
-                    Preco = 135.0,
+                    IdTicket = "4",
+                    CodIngresso = "A08",
+                    Preco = 1095.0,
                     UrlQrCode = "qr_code.png",
                     Setor = _setor
                 };
@@ -81,6 +69,66 @@ namespace App6.Layers.Services
             return _tickets;
         }
 
-  
+        public TicketModel GetTicketByIdSetor(String _idSetor){
+
+            TicketModel _tickets = new TicketModel();
+
+            if (_idSetor == "1")
+            {
+                var _setor = new SetorServices().GetSetor("1");
+                var _ticket = new TicketModel()
+                {
+                    IdTicket = "1",
+                    CodIngresso = "A21",
+                    Preco = 75.0,
+                    UrlQrCode = "qr_code.png",
+                    Setor = _setor
+                };
+                _tickets = _ticket;
+            }
+            if (_idSetor == "2")
+            {
+                var _setor = new SetorServices().GetSetor("2");
+                var _ticket = new TicketModel()
+                {
+                    IdTicket = "2",
+                    CodIngresso = "B11",
+                    Preco = 195.0,
+                    UrlQrCode = "qr_code.png",
+                    Setor = _setor
+                };
+                _tickets = _ticket;
+            }
+            if (_idSetor == "3")
+            {
+                var _setor = new SetorServices().GetSetor("3");
+                var _ticket = new TicketModel()
+                {
+
+                    IdTicket = "3",
+                    CodIngresso = "A03",
+                    Preco = 1395.0,
+                    UrlQrCode = "qr_code.png",
+                    Setor = _setor
+                };
+                _tickets = _ticket;
+            }
+            if (_idSetor == "3")
+            {
+                var _setor = new SetorServices().GetSetor("3");
+                var _ticket = new TicketModel()
+                {
+
+                    IdTicket = "4",
+                    CodIngresso = "A09",
+                    Preco = 1165.0,
+                    UrlQrCode = "qr_code.png",
+                    Setor = _setor
+                };
+                _tickets = _ticket;
+            }
+
+            return _tickets;
+        }
     }
 }

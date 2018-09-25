@@ -5,8 +5,10 @@ namespace App6.Layers.Services
 {
     public class EventoServices
     {
-        public EventoModel GetEvento(String _idLocal){
+        public EventoModel GetEventoByLocal(String _idLocal){
+
             var _evento = new EventoModel();
+
             if (_idLocal.Equals("1")){
                 _evento = new EventoModel
                 {
@@ -54,7 +56,7 @@ namespace App6.Layers.Services
                     DtFinalVenda = new DateTime(2018, 05, 10),
                     UrlImagem = "skank.jpg",
                     FaixaEtaria = new FaixaEtariaServices().GetFaixaEtaria("1"),
-                    Local = new LocalServices().GetLocal("1")
+                    Local = new LocalServices().GetLocal("3")
                 };
             }
             if(_idLocal.Equals("4")){
@@ -70,7 +72,7 @@ namespace App6.Layers.Services
                     DtFinalVenda = new DateTime(2018, 05, 10),
                     UrlImagem = "luluSantos.jpg",
                     FaixaEtaria = new FaixaEtariaServices().GetFaixaEtaria("1"),
-                    Local = new LocalServices().GetLocal("1")
+                    Local = new LocalServices().GetLocal("4")
                 };
             }
             return _evento;

@@ -8,42 +8,38 @@ namespace App6.Layers.Business
 {
     public class TicketBusiness
     {
-        public TicketBusiness(){}
-
         public List<TicketModel> GetAllTicketByUsuario(UsuarioModel _usuario){
             List<TicketModel> _tickets = new List<TicketModel>();
-            List<ItensPedidoModel> _itensPedido = new List<ItensPedidoModel>();
+            List<ItemPedidoModel> _itensPedido = new List<ItemPedidoModel>();
 
             //List<List<TicketModel>> listaItens = new List<List<TicketModel>>();
 
             foreach (var pedido in Global.Pedidos)
             {
-                _itensPedido = new ItensPedidoServices().GetAllItensByPedido(pedido);
+                _itensPedido = new ItemPedidoServices().GetAllItensByPedido(pedido);
 
                 foreach (var item in _itensPedido)
                 {
-                    var _ticketSub = new TicketServices().GetTickets(item.IdItemPedido, pedido.IdPedido);
+                    var _ticketSub = new TicketServices().GetTicket(item.IdItemPedido, pedido.IdPedido);
                     _tickets.Add(_ticketSub);
                 }
             }
             return _tickets;
         }
-        public TicketModel GetTicket()
+
+        public TicketModel GetTicket(String _idPedido, String _idItem)
         {
-            //var _local = new LocalServices().GetLocal(Global.Evento.Local.IdLocal);
-            //var _setor = new SetorServices().GetSetoresByIdLocal(_local.IdLocal);
-            List<ItensPedidoModel> _itens = new List<ItensPedidoModel>();
             TicketModel _ticket = new TicketModel();
 
-            foreach (var pedido in Global.Pedidos)
-            {
-                _itens = new ItensPedidoServices().GetAllItensByPedido(pedido);
+            _ticket = new TicketServices().GetTicket(_idItem, _idPedido);
 
-                foreach (var item in _itens)
-                {
-                    _ticket = new TicketServices().GetTickets(item.IdItemPedido, pedido.IdPedido);
-                }
-            }
+            return _ticket;
+        }
+
+        public TicketModel GetTicketBySetor(String _idSetor){
+
+            var _ticket = new TicketServices().GetTicketByIdSetor(_idSetor);
+
             return _ticket;
         }
 

@@ -6,11 +6,6 @@ namespace App6.Layers.Services
 {
     public class PedidoServices
     {
-        public PedidoModel GetPedido(String _id){
-
-            return null;
-        }
-
         public List<PedidoModel> GetPedidoByUsuario(UsuarioModel _user, CartaoCreditoModel _cartao){
 
             List<PedidoModel> _listaPedidos = new List<PedidoModel>();
@@ -26,7 +21,6 @@ namespace App6.Layers.Services
                     FormaPagamento = _formaPg
                 };
                 _listaPedidos.Add(_pedido);
-
 
                 var _pedido2 = new PedidoModel
                 {
@@ -53,8 +47,41 @@ namespace App6.Layers.Services
             }
         }
 
-        public PedidoServices()
-        {
+        public PedidoModel GetPedidoById(String _idPedido){
+
+            PedidoModel _pedido = new PedidoModel();
+            var _user = Global.Usuario;
+            var _formaPg = new FormaPagamentoServices().GetFormaPagamento(Global.Usuario);
+            var _cartaoPg = new CartaoCreditoServices().GetCartaoCredito(_formaPg.IdFormaPagamento);
+
+            if (_idPedido.Equals("P-0001")){
+                _pedido = new PedidoModel
+                {
+                    IdPedido = "P-0001",
+                    Usuario = _user,
+                    FormaPagamento = _formaPg
+                };
+
+            }
+            if(_idPedido.Equals("P-0002")){
+                _pedido = new PedidoModel
+                {
+                    IdPedido = "P-0002",
+                    Usuario = _user,
+                    FormaPagamento = _formaPg
+                };
+            }
+            if(_idPedido.Equals("P-0003")){
+                _pedido = new PedidoModel
+                {
+                    IdPedido = "P-0003",
+                    Usuario = _user,
+                    FormaPagamento = _formaPg
+                };
+            }
+
+            return _pedido;
         }
+
     }
 }

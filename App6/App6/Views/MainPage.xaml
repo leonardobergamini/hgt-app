@@ -13,7 +13,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:ItemsPage />
+                <views:ItensPage />
             </x:Arguments>
         </NavigationPage>
         <NavigationPage Title="Perfil">

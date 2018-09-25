@@ -40,6 +40,40 @@ namespace App6.Layers.Services
                 };
             }
 
+            if (_idLocal.Equals("3"))
+            {
+                _local = new LocalModel
+                {
+                    IdLocal = "3",
+                    NomeLocal = "Local de Evento #3",
+                    CapacidadeTotal = 12000,
+                    Descricao = "Local de Evento #3 ",
+                    Endereco = "Rua Local de Evento #3",
+                    NroEndereco = 316,
+                    ComplementoEndereco = "Pŕoximo ao Metrô Santana",
+                    CEP = "12309-000",
+                    Cidade = "São Paulo",
+                    UF = "SP"
+                };
+            }
+
+            if (_idLocal.Equals("4"))
+            {
+                _local = new LocalModel
+                {
+                    IdLocal = "4",
+                    NomeLocal = "Local de Evento #4",
+                    CapacidadeTotal = 8000,
+                    Descricao = "Local de Evento #4 ",
+                    Endereco = "Rua Local de Evento #4",
+                    NroEndereco = 316,
+                    ComplementoEndereco = "Pŕoximo ao Metrô Jabaquara",
+                    CEP = "97645-100",
+                    Cidade = "São Paulo",
+                    UF = "SP"
+                };
+            }
+
             return _local;
         }
     }

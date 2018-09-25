@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
-             x:Class="App6.Views.ItemDetailPage"  Title="{Binding Ticket.Nome}"
+             x:Class="App6.Views.ItemDetailPage"  
+             Title="{Binding Ticket.Nome}"
              xmlns:vm="clr-namespace:App6.ViewModels">
     <ContentPage.BindingContext>
         <vm:ItemDetailViewModel/>
