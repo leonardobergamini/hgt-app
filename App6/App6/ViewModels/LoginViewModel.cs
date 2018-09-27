@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using App6.Layers.Business;
+using App6.Layers.Services;
 using App6.Models;
 using Xamarin.Forms;
 
@@ -21,6 +22,11 @@ namespace App6.ViewModels
                     var usuario = new UsuarioBusiness().Login(Usuario.ToLower(), Senha);
                     //App.MensagemAlerta("Nome do usuário: " + usuario.Nome);
                     Global.Usuario = usuario;
+                    Global.TitularTicket = new TitularTicketModel(usuario);
+                    var _formaPg = new FormaPagamentoServices().GetFormaPagamento(Global.Usuario);
+                    Global.FormaPagamento = _formaPg;
+                    var _cartao = new CartaoCreditoServices().GetCartaoCredito(_formaPg.IdFormaPagamento);
+                    Global.CartaoCredito = _cartao;
                     MessagingCenter.Send<string>("", "LoginSucesso");
                 }
                 catch (Exception e)

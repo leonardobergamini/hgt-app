@@ -58,6 +58,8 @@ namespace App6.Models
         [Newtonsoft.Json.JsonProperty(PropertyName = "MailingState")]
         public String UF { get; set; }
 
+        public String NomeCompleto { get { return this.PrimeiroNome + " " + this.Sobrenome; } }
+
 
         public UsuarioModel()
         {

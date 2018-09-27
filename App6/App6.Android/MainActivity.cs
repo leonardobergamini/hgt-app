@@ -14,6 +14,7 @@ namespace App6.Droid
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            ZXing.Mobile.MobileBarcodeScanner.Initialize(Application);
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 

@@ -53,7 +53,7 @@ namespace App6.Layers.Services
             }
             if (_idItem.Equals("4") && _idPedido.Equals("P-0001"))
             {
-                var _setor = new SetorServices().GetSetor("3");
+                var _setor = new SetorServices().GetSetor("1");
                 var _ticket = new TicketModel()
                 {
 

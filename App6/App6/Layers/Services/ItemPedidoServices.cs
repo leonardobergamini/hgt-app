@@ -17,7 +17,8 @@ namespace App6.Layers.Services
                 {
                     IdItemPedido = "1",
                     Pedido = _pedido,
-                    Ticket = _ticket
+                    Ticket = _ticket,
+                    TitularTicket = Global.TitularTicket
                 };
 
                 _itens.Add(_item);
@@ -29,7 +30,8 @@ namespace App6.Layers.Services
                 {
                     IdItemPedido = "2",
                     Pedido = _pedido,
-                    Ticket = _ticket
+                    Ticket = _ticket,
+                    TitularTicket = Global.TitularTicket
                 };
 
                 _itens.Add(_item);
@@ -42,7 +44,8 @@ namespace App6.Layers.Services
                 {
                     IdItemPedido = "3",
                     Pedido = _pedido,
-                    Ticket = _ticket
+                    Ticket = _ticket,
+                    TitularTicket = Global.TitularTicket
                 };
 
                 _itens.Add(_item);
@@ -55,7 +58,8 @@ namespace App6.Layers.Services
                 {
                     IdItemPedido = "4",
                     Pedido = _pedido,
-                    Ticket = _ticket
+                    Ticket = _ticket,
+                    TitularTicket = Global.TitularTicket
                 };
 
                 _itens.Add(_item);
@@ -73,7 +77,8 @@ namespace App6.Layers.Services
                 {
                     IdItemPedido = "1",
                     Pedido = Global.Pedido,
-                    Ticket = _ticket
+                    Ticket = _ticket,
+                    TitularTicket = Global.TitularTicket
                 };
             }
             if (_idItemPedido.Equals("2"))
@@ -83,7 +88,8 @@ namespace App6.Layers.Services
                 {
                     IdItemPedido = "2",
                     Pedido = Global.Pedido,
-                    Ticket = _ticket
+                    Ticket = _ticket,
+                    TitularTicket = Global.TitularTicket
                 };
 
 
@@ -96,7 +102,8 @@ namespace App6.Layers.Services
                 {
                     IdItemPedido = "3",
                     Pedido = Global.Pedido,
-                    Ticket = _ticket
+                    Ticket = _ticket,
+                    TitularTicket = Global.TitularTicket
                 };
 
             }
@@ -108,7 +115,8 @@ namespace App6.Layers.Services
                 {
                     IdItemPedido = "4",
                     Pedido = Global.Pedido,
-                    Ticket = _ticket
+                    Ticket = _ticket,
+                    TitularTicket = Global.TitularTicket
                 };
 
             }

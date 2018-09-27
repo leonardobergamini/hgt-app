@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
-             x:Class="App6.Views.ItemDetailPage"  
-             Title="{Binding Ticket.Nome}"
+             x:Class="App6.Views.ItemDetailPage" 
+             xmlns:zx="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" 
+             xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
+             Title="{Binding Ticket.CodIngresso}"
              xmlns:vm="clr-namespace:App6.ViewModels">
     <ContentPage.BindingContext>
         <vm:ItemDetailViewModel/>
@@ -39,7 +41,21 @@
                 <Label Text="{Binding Ticket.Preco, StringFormat='R$ {0:F0}'}" FontSize="Medium" FontAttributes="Bold"/>
                 <Button BackgroundColor="Black" HeightRequest="1"/>
                 <Label Text="Meu ingresso:" FontSize="Large" FontAttributes="Bold"/>
-                <Image Source="{Binding Ticket.UrlQrCode}" VerticalOptions="Center"/>
+                
+                <zx:ZXingBarcodeImageView
+                    BarcodeFormat="QR_CODE"
+                    BarcodeValue="{Binding Ticket.IdTicket}" 
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="FillAndExpand" 
+                    x:Name="QRCodeImage"
+                    WidthRequest="300"
+                    HeightRequest="300">
+                    <zx:ZXingBarcodeImageView.BarcodeOptions> 
+                            <zxcm:EncodingOptions 
+                            Width="60" 
+                            Height="60" />
+                    </zx:ZXingBarcodeImageView.BarcodeOptions> 
+                </zx:ZXingBarcodeImageView>
                 <Button Margin="0,10,0,0" 
                         Text="Alterar a titularidade" 
                         BackgroundColor="{StaticResource Primary}" 

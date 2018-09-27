@@ -19,6 +19,7 @@ namespace App6.Layers.Services
                     IdPedido = "P-0001",
                     Usuario = _user,
                     FormaPagamento = _formaPg
+
                 };
                 _listaPedidos.Add(_pedido);
 

@@ -21,7 +21,7 @@
         <Entry Placeholder="Sobrenome" x:Name="EntrySobrenome" 
                Text="{Binding Sobrenome}" />
         <Entry Placeholder="Data de nascimento" x:Name="EntryDtNascimento" 
-               Text="{Binding DataNascimento}" />
+               Text="{Binding DtNascimento}" />
         <Entry Placeholder="CPF" x:Name="EntryCPF" 
                Text="{Binding CPF}" />
         <Entry Placeholder="Telefone" x:Name="EntryTelefone" 

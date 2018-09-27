@@ -16,48 +16,65 @@ namespace App6.ViewModels
 {
     public class ItensViewModel
     {
-        //public EventoModel Evento { get; set; }
-        //public TicketModel Ticket { get; set; }
+        public ObservableCollection<PedidoAgrupadoModel> PedidoAgrupado { get; set; }
+
         public ItensViewModel()
         {
-            var _pedidos = new PedidoBusiness().GetAllPedido();
-            TicketModel _ticket = null;
-            EventoModel _evento = null;
+            PedidoAgrupado = new ObservableCollection<PedidoAgrupadoModel>();
+            PedidoAgrupadoModel _pedidoAntigo = new PedidoAgrupadoModel(){LongName = "Antigos"};
+            PedidoAgrupadoModel _pedidoNovo = new PedidoAgrupadoModel(){LongName = "Novos"};
+            PedidoAgrupadoModel _pedidoHoje = new PedidoAgrupadoModel() { LongName = "É hoje!" };
 
-            //Como pegar as infos de cada evento do cliente?
-            //O problema é quando temos mais de um pedido na lista. Como popular, individualmente, as linhas
-            //do listview com as infos do evento de cada pedido?
+            var _pedidos = new PedidoBusiness().GetAllPedidoAndEventos();
 
+            foreach (var pedido in _pedidos)
+            {
+                var _dia = pedido.Evento.DtInicioEvento.Day;
+                var _mes = pedido.Evento.DtInicioEvento.Month;
+                var _ano = pedido.Evento.DtInicioEvento.Year;
+                //19/12/2018
+                if (_ano >= DateTime.Now.Year)
+                {
+                    if(_mes == DateTime.Now.Month)
+                    {
+                        if(_dia == DateTime.Now.Day){
+                            //PedidoHoje
+                            _pedidoHoje.Add(pedido);
+                        }else if(_dia > DateTime.Now.Day)
+                        {
+                            //PedidoNovo
+                            _pedidoNovo.Add(pedido);
+                        }else{
+                            //PedidoAntigo
+                            _pedidoAntigo.Add(pedido);
+                        }
 
-            //if (_pedidos.Count == 1){
-            //    var _pedido = _pedidos[0];
-            //    var _itens = new ItemPedidoBusiness().GetAllItemPedido(_pedido);
-            //    //var _itemPedido = new ItemPedidoBusiness().GetItemPedidoById(_itens[0].IdItemPedido);
-            //    _ticket = new TicketBusiness().GetTicket(_pedido.IdPedido, _itens[0].IdItemPedido);
-            //    _evento = new EventoBusiness().GetEventoByIdLocal(_ticket.Setor.Local.IdLocal);
+                    }else if(_mes > DateTime.Now.Month)
+                    {
+                        //PedidoNovo
+                        _pedidoNovo.Add(pedido);
+                       
+                    }else
+                    {
+                        //PedidoAntigo
+                        _pedidoAntigo.Add(pedido);
+                    }
 
-            //}
+                }else 
+                {
+                    //PedidoAntigo
+                    _pedidoAntigo.Add(pedido);
+                }
+            }
 
-            //Global.Evento = _evento;
-            //Global.Ticket = _ticket;
-            //Global.Pedidos = _pedidos;
+            PedidoAgrupado.Add(_pedidoNovo);
+            PedidoAgrupado.Add(_pedidoAntigo);
+            PedidoAgrupado.Add(_pedidoHoje);
 
-            ListaPedido = new PedidoBusiness().GetAllPedido();
-            int i = 0;
-            //var _exibicao = new ExibicaoPedido();
-            //_exibicao.UrlImagem = _evento.UrlImagem;
-
-            ////var _exibicao = new ExibicaoPedido
-            ////{
-            ////    UrlImagem = _evento.UrlImagem
-
-            ////};
-            //ListaPedido.Add(_exibicao);
-            //int i = 0;
-
+            ListaPedido = PedidoAgrupado;
         }
-        private IList<PedidoModel> listaPedido;
-        public IList<PedidoModel> ListaPedido{
+        private IList<PedidoAgrupadoModel> listaPedido;
+        public IList<PedidoAgrupadoModel> ListaPedido{
             get{
                 return listaPedido;
             }

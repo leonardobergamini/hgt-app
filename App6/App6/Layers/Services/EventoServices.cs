@@ -50,8 +50,8 @@ namespace App6.Layers.Services
                     Descricao = "Skank apresenta o show do inédito DVD “OS Três " +
                         "Primeiros – Ao Vivo”. O repertório reúne os sucessos dos " +
                         "três primeiros álbuns.",
-                    DtInicioEvento = new DateTime(2018, 05, 19),
-                    DtFinalEvento = new DateTime(2018, 05, 19),
+                    DtInicioEvento = new DateTime(2018, 09, 30),
+                    DtFinalEvento = new DateTime(2018, 10, 01),
                     DtInicioVenda = new DateTime(2018, 04, 01),
                     DtFinalVenda = new DateTime(2018, 05, 10),
                     UrlImagem = "skank.jpg",

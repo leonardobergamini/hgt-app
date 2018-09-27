@@ -26,6 +26,8 @@ namespace App6.Views
                 if (e.Item == null)
                     return;
                 Global.Pedido = (PedidoModel) e.Item;
+                //Global.Index = (ItensListView.ItemsSource as List<ExibicaoPedido>).IndexOf(Global.ExibicaoPedido);
+                //Global.Pedido = Global.ExibicaoPedido.Pedidos[Global.Index];
                 Global.ItensPedidos = new ItemPedidoBusiness().GetAllItemPedido(Global.Pedido);
 
                 if(Global.ItensPedidos.Count > 1){
