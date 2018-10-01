@@ -1,28 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace App6.Models
 {
     public class SetorModel
     {
-        public String IdSetor { get; set; } 
+        public List<SetorModel> records { get; set; }
+
+        [Newtonsoft.Json.JsonProperty(PropertyName = "Id")]
+        public String IdSetor { get; set; }
+
+        [Newtonsoft.Json.JsonProperty(PropertyName = "Name")]
         public String NomeSetor { get; set;}
+
+        [Newtonsoft.Json.JsonProperty(PropertyName = "descricao__c")]
         public String Descricao { get; set; }
-        public long CapacidadeTotalSetor { get; set; }
-        public long CapacidadeUsadaSetor { get; set; }
-        public LocalModel Local { get; set; }
 
-        public SetorModel()
-        {
-        }
+        [Newtonsoft.Json.JsonProperty(PropertyName = "capacidade_total_setor__c")]
+        public String CapacidadeTotalSetor { get; set; }
 
-        public SetorModel(string idSetor, string nomeSetor, string descricao, long capacidadeTotalSetor, long capacidadeUsadaSetor, LocalModel local)
-        {
-            this.IdSetor = idSetor;
-            this.NomeSetor = nomeSetor;
-            this.Descricao = descricao;
-            this.CapacidadeTotalSetor = capacidadeTotalSetor;
-            this.CapacidadeUsadaSetor = capacidadeUsadaSetor;
-            this.Local = local;
-        }
+        [Newtonsoft.Json.JsonProperty(PropertyName = "capacidade_usada_setor__c")]
+        public String CapacidadeUsadaSetor { get; set; }
+
+        [Newtonsoft.Json.JsonProperty(PropertyName = "local__c")]
+        public String IdLocal { get; set; }
 
     }
 }

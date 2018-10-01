@@ -7,8 +7,8 @@ namespace App6.Layers.Business
 {
     public class ItemPedidoBusiness
     {
-        public List<ItemPedidoModel> GetAllItemPedido(PedidoModel _pedido){
-            var _itens = new ItemPedidoServices().GetAllItensByPedido(_pedido);
+        public List<ItemPedidoModel> GetAllItemPedido(String _idPedido){
+            var _itens = new ItemPedidoServices().GetAllItensByPedido(_idPedido);
             return _itens;
         }
 

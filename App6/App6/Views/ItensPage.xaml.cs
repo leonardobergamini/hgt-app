@@ -21,21 +21,20 @@ namespace App6.Views
         public ItensPage()
         {
             InitializeComponent();
+
             ItensListView.ItemTapped += async (sender, e) =>
             {
                 if (e.Item == null)
                     return;
                 Global.Pedido = (PedidoModel) e.Item;
-                //Global.Index = (ItensListView.ItemsSource as List<ExibicaoPedido>).IndexOf(Global.ExibicaoPedido);
-                //Global.Pedido = Global.ExibicaoPedido.Pedidos[Global.Index];
-                Global.ItensPedidos = new ItemPedidoBusiness().GetAllItemPedido(Global.Pedido);
+                Global.ItensPedidos = new ItemPedidoBusiness().GetAllItemPedido(Global.Pedido.IdPedido);
 
                 if(Global.ItensPedidos.Count > 1){
                     await Navigation.PushAsync(new ItensDetailPage());
                 }else if(Global.ItensPedidos.Count == 1){
                     //Pegar o IdItem do Ticket
                     Global.ItemPedido = new ItemPedidoBusiness().GetItemPedidoById(Global.ItensPedidos[0].IdItemPedido);
-                    Global.Ticket = new TicketBusiness().GetTicket(Global.Pedido.IdPedido, Global.ItemPedido.IdItemPedido);
+                    //Global.Ticket = new TicketBusiness().GetTicket(Global.Pedido.IdPedido, Global.ItemPedido.IdItemPedido);
                     await Navigation.PushAsync(new ItemDetailPage());
                 }else{
                     throw new Exception("Erro na página de ItemsPage()");

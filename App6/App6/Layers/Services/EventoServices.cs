@@ -1,81 +1,76 @@
 ﻿using System;
+using System.Net.Http;
 using App6.Models;
+using Newtonsoft.Json;
 
 namespace App6.Layers.Services
 {
     public class EventoServices
     {
-        public EventoModel GetEventoByLocal(String _idLocal){
+        public EventoModel GetEventoById(String _idEvento){
+            var auth = new APIConfig().Auth();
+            var _accessToken = auth.access_token;
+            var _url = auth.instance_url;
 
-            var _evento = new EventoModel();
+            var _urlAccountApi = _url + "/services/data/v43.0/query/?q= SELECT Id, Name, " +
+                "local__c, faixa_etaria__c, descricao__c, dt_inicio_evento__c, " +
+                "dt_final_evento__c, dt_inicio_venda__c, dt_final_venda__c, url_img__c " +
+                ", Hr_inicio_evento__c, Hr_termino_evento__c FROM evento__c WHERE Id ='" + _idEvento+"'";
 
-            if (_idLocal.Equals("1")){
-                _evento = new EventoModel
-                {
-                    IdEvento = "1",
-                    NomeEvento = "KASABIAN",
-                    Descricao = "Depois de três anos de espera o grupo britânico " +
-                        "está de volta ao Brasil para mais uma apresentação.",
-                    DtInicioEvento = new DateTime(2018, 09, 19),
-                    DtFinalEvento = new DateTime(2018, 09, 19),
-                    DtInicioVenda = new DateTime(2018, 08, 01),
-                    DtFinalVenda = new DateTime(2018, 09, 10),
-                    UrlImagem = "kasabian.jpg",
-                    FaixaEtaria = new FaixaEtariaServices().GetFaixaEtaria("1"),
-                    Local = new LocalServices().GetLocal("1")
-                };
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization =
+                      new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _accessToken);
+
+            var response = client.GetAsync(_urlAccountApi).Result;
+
+            try
+            {
+                var conteudoResposta = response.Content.ReadAsStringAsync().Result;
+                var eventoApi = JsonConvert.DeserializeObject<EventoModel>(conteudoResposta);
+
+
+                return eventoApi.records[0];
             }
-            if(_idLocal.Equals("2")){
-                _evento = new EventoModel
-                {
-                    IdEvento = "2",
-                    NomeEvento = "ROGER WATERS",
-                    Descricao = "Roger Waters retorna à América do Sul em 2018 com " +
-                        "uma nova turnê, Roger Waters - Us + Them, que combina " +
-                        "clássicos do Pink Floyd e novas canções de seu trabalho solo.",
-                    DtInicioEvento = new DateTime(2018, 12, 19),
-                    DtFinalEvento = new DateTime(2018, 12, 22),
-                    DtInicioVenda = new DateTime(2018, 10, 01),
-                    DtFinalVenda = new DateTime(2018, 12, 10),
-                    UrlImagem = "rogerWaters.jpg",
-                    FaixaEtaria = new FaixaEtariaServices().GetFaixaEtaria("2"),
-                    Local = new LocalServices().GetLocal("2")
-                };
+            catch (Exception e)
+            {
+                //(response.IsSuccessStatusCode)
+                throw;
             }
-            if(_idLocal.Equals("3")){
-                _evento = new EventoModel
-                {
-                    IdEvento = "3",
-                    NomeEvento = "SKANK",
-                    Descricao = "Skank apresenta o show do inédito DVD “OS Três " +
-                        "Primeiros – Ao Vivo”. O repertório reúne os sucessos dos " +
-                        "três primeiros álbuns.",
-                    DtInicioEvento = new DateTime(2018, 09, 30),
-                    DtFinalEvento = new DateTime(2018, 10, 01),
-                    DtInicioVenda = new DateTime(2018, 04, 01),
-                    DtFinalVenda = new DateTime(2018, 05, 10),
-                    UrlImagem = "skank.jpg",
-                    FaixaEtaria = new FaixaEtariaServices().GetFaixaEtaria("1"),
-                    Local = new LocalServices().GetLocal("3")
-                };
+
+        }
+
+        //Consultar Evento por nro. do Pedido
+        public EventoModel GetEventoByPedido(String _idPedido){
+
+            var auth = new APIConfig().Auth();
+            var _accessToken = auth.access_token;
+            var _url = auth.instance_url;
+
+            var _urlAccountApi = _url + "/services/data/v43.0/query/?q= SELECT Evento__c " +
+                "FROM pedido__c WHERE Id ='" + _idPedido + "'";
+
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization =
+                      new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _accessToken);
+
+            var response = client.GetAsync(_urlAccountApi).Result;
+
+            try
+            {
+                var conteudoResposta = response.Content.ReadAsStringAsync().Result;
+                var pedidoApi = JsonConvert.DeserializeObject<PedidoModel>(conteudoResposta);
+
+                var _evento = pedidoApi.records[0].IdEvento;
+
+                var _eventoRetorno = GetEventoById(_evento);
+                return _eventoRetorno;
+                
             }
-            if(_idLocal.Equals("4")){
-                _evento = new EventoModel
-                {
-                    IdEvento = "4",
-                    NomeEvento = "LULU SANTOS",
-                    Descricao = "Lulu Santos apresenta sua turnê “Canta Lulu”," +
-                        " em comemoração aos seus 45 anos de carreira.",
-                    DtInicioEvento = new DateTime(2018, 06, 19),
-                    DtFinalEvento = new DateTime(2018, 06, 19),
-                    DtInicioVenda = new DateTime(2018, 05, 01),
-                    DtFinalVenda = new DateTime(2018, 05, 10),
-                    UrlImagem = "luluSantos.jpg",
-                    FaixaEtaria = new FaixaEtariaServices().GetFaixaEtaria("1"),
-                    Local = new LocalServices().GetLocal("4")
-                };
+            catch (Exception e)
+            {
+                //(response.IsSuccessStatusCode)
+                throw;
             }
-            return _evento;
         }
     }
 }

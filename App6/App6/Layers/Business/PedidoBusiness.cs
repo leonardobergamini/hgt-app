@@ -7,37 +7,26 @@ namespace App6.Layers.Business
 {
     public class PedidoBusiness
     {
-        public List<PedidoModel> GetAllPedido(){
-            var _pedidos = new PedidoServices().GetPedidoByUsuario(Global.Usuario, Global.CartaoCredito);
-            return _pedidos;
-        }
-
-        public List<PedidoModel> GetAllPedidoAndEventos()
+        public List<PedidoModel> GetAllPedidoAndEventos(String _idFormaPg)
         {
-            var _pedidos = new PedidoServices().GetPedidoByUsuario(Global.Usuario, Global.CartaoCredito);
+            var _pedidos = new PedidoServices().GetAllPedido(_idFormaPg);
+            List<PedidoModel> _pedidosRetorno = new List<PedidoModel>();
 
-            var _pedidosRetorno = new List<PedidoModel>();
+            foreach (var pedido in _pedidos)
+            {
+                //Global.ItensPedidos = new ItemPedidoBusiness().GetAllItemPedido(pedido);
+                //var _itemPedido = new ItemPedidoBusiness().GetItemPedidoById(Global.ItensPedidos[0].IdItemPedido);
+                //var _idTicket = _itemPedido.IdTicket;
+                //var _ticket = new TicketBusiness().GetTicketById(_idTicket);
+                //var _setor = new SetorBusiness().GetSetorById(_ticket.IdSetor);
+                //var _evento = new EventoBusiness().GetEventoByEvento
 
-            foreach (var item in _pedidos) {
+                pedido.Evento = new EventoBusiness().GetEventoById(pedido.IdEvento);
+                pedido.Evento.Local = new LocalServices().GetLocalById(pedido.Evento.IdLocal);
 
-                var _itens = new ItemPedidoBusiness().GetAllItemPedido(item);
-                //var _itemPedido = new ItemPedidoBusiness().GetItemPedidoById(_itens[0].IdItemPedido);
-                var _ticket = new TicketBusiness().GetTicket(item.IdPedido, _itens[0].IdItemPedido);
-                var _evento = new EventoBusiness().GetEventoByIdLocal(_ticket.Setor.Local.IdLocal);
-
-
-                //item.Evento = new Services.EventoServices().GetEventoByPedido(item.IdPedido);
-                //item.Evento = new EventoModel()
-                //{
-                //    NomeEvento = "Evento #1",
-                //    UrlImagem = "https://bhaz.com.br/wp-content/uploads/2018/01/22496026_10155617737168432_8803059024245934709_o-850x491.jpg"
-                //};
-                item.Evento = _evento;
-
-                _pedidosRetorno.Add(item);
+                _pedidosRetorno.Add(pedido);
 
             }
-
 
             return _pedidosRetorno;
         }

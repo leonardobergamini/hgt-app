@@ -15,7 +15,7 @@ namespace App6.Models
         public static ItemPedidoModel ItemPedido { get; set; }
         public static PedidoModel Pedido { get; set; }
         public static FormaPagamentoModel FormaPagamento { get; set; }
-        public static CartaoCreditoModel CartaoCredito { get; set;}
+        public static String CartaoCredito { get; set;}
         public static TitularTicketModel TitularTicket { get; set; }
     }
 }

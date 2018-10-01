@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace App6.Layers.Services
 {
@@ -18,7 +19,8 @@ namespace App6.Layers.Services
         public String instance_url { get; set; }
         public String token_type { get; set; }
 
-        public Dictionary<String, String> AcessarAPI(){
+        public Dictionary<String, String> AcessarAPI()
+        {
             var parameters = new Dictionary<String, String> {
                 { "grant_type" , grantAcess },
                 { "username" , userName },
@@ -30,5 +32,29 @@ namespace App6.Layers.Services
             return parameters;
 
         }
+
+
+        public APIConfig Auth()
+        {
+
+            APIConfig apiConfig = new APIConfig();
+
+            var parameters = apiConfig.AcessarAPI();
+            var encodedContent = new FormUrlEncodedContent(parameters);
+            HttpClient client = new HttpClient();
+            var response = client.PostAsync(apiConfig.urlSalesForceAuth, encodedContent).Result;
+
+            if (response.IsSuccessStatusCode)
+            {
+                var conteudoResposta = response.Content.ReadAsStringAsync().Result;
+                var json = JsonConvert.DeserializeObject<APIConfig>(conteudoResposta);
+                return json;
+            }
+            else
+            {
+                throw new Exception(response.ReasonPhrase);
+            }
+        }
     }
+        
 }

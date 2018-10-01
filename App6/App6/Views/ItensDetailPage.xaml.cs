@@ -14,7 +14,9 @@ namespace App6.Views
             {
                 if (e.Item == null)
                     return;
-                Global.ItemPedido = (ItemPedidoModel)e.Item;
+                var _item = (ItemPedidoModel)e.Item;
+                Global.ItemPedido = _item.ItemPedido;
+                int i = 0;
                 await Navigation.PushAsync(new ItemDetailPage());
             };
         }

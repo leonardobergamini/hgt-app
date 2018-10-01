@@ -1,80 +1,41 @@
 ﻿using System;
+using System.Net.Http;
 using App6.Models;
+using Newtonsoft.Json;
 
 namespace App6.Layers.Services
 {
     public class LocalServices
     {
-        public LocalModel GetLocal(String _idLocal){
-            var _local = new LocalModel();
-            if (_idLocal.Equals("1")){
-                _local = new LocalModel
-                {
-                    IdLocal = "1",
-                    NomeLocal = "Local de Evento #1",
-                    CapacidadeTotal = 20000,
-                    Descricao = "Loca de Evento #1 ",
-                    Endereco = "Rua Local de Evento #1",
-                    NroEndereco = 1200,
-                    ComplementoEndereco = "",
-                    CEP = "12314-999",
-                    Cidade = "São Paulo",
-                    UF = "SP"
+        public LocalModel GetLocalById(String _idLocal)
+        {
+            var auth = new APIConfig().Auth();
+            var _accessToken = auth.access_token;
+            var _url = auth.instance_url;
 
-                };
-            }
-            if (_idLocal.Equals("2"))
+            var _urlAccountApi = _url + "/services/data/v43.0/query/?q= SELECT Id, " +
+                "Name, descricao__c, capacidade_total__c, rua__c, cidade__c, " +
+                "estado__c, CEP__c, pais__c, complemento__c, numero__c " +
+                "FROM Local__c WHERE Id ='" + _idLocal + "'";
+
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization =
+                      new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _accessToken);
+
+            var response = client.GetAsync(_urlAccountApi).Result;
+
+            try
             {
-                _local = new LocalModel
-                {
-                    IdLocal = "2",
-                    NomeLocal = "Local de Evento #2",
-                    CapacidadeTotal = 40000,
-                    Descricao = "Loca de Evento #2 ",
-                    Endereco = "Rua Local de Evento #2",
-                    NroEndereco = 876,
-                    ComplementoEndereco = "Pŕoximo ao Metrô Paraiso",
-                    CEP = "98756-000",
-                    Cidade = "São Paulo",
-                    UF = "SP"
-                };
-            }
+                var conteudoResposta = response.Content.ReadAsStringAsync().Result;
+                var localApi = JsonConvert.DeserializeObject<LocalModel>(conteudoResposta);
 
-            if (_idLocal.Equals("3"))
+                return localApi.records[0];
+            }
+            catch (Exception e)
             {
-                _local = new LocalModel
-                {
-                    IdLocal = "3",
-                    NomeLocal = "Local de Evento #3",
-                    CapacidadeTotal = 12000,
-                    Descricao = "Local de Evento #3 ",
-                    Endereco = "Rua Local de Evento #3",
-                    NroEndereco = 316,
-                    ComplementoEndereco = "Pŕoximo ao Metrô Santana",
-                    CEP = "12309-000",
-                    Cidade = "São Paulo",
-                    UF = "SP"
-                };
+                //(response.IsSuccessStatusCode)
+                throw;
             }
-
-            if (_idLocal.Equals("4"))
-            {
-                _local = new LocalModel
-                {
-                    IdLocal = "4",
-                    NomeLocal = "Local de Evento #4",
-                    CapacidadeTotal = 8000,
-                    Descricao = "Local de Evento #4 ",
-                    Endereco = "Rua Local de Evento #4",
-                    NroEndereco = 316,
-                    ComplementoEndereco = "Pŕoximo ao Metrô Jabaquara",
-                    CEP = "97645-100",
-                    Cidade = "São Paulo",
-                    UF = "SP"
-                };
-            }
-
-            return _local;
         }
     }
 }

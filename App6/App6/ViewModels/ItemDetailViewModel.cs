@@ -12,15 +12,15 @@ namespace App6.ViewModels
         public TicketModel Ticket { get; set; }
 
         public ItemDetailViewModel(){
+            var _evento = new EventoBusiness().GetEventoByPedido(Global.Pedido.IdPedido);
+            var _ticket = new TicketBusiness().GetTicketByIdItem(Global.ItemPedido.IdItemPedido);
+            var _faixa = new FaixaEtariaBusiness().GetFaixaEtariaById(_evento.IdFaixaEtaria);
 
-            // Variavéis: Global.Pedido e Global.ItemPedido
+            //Adicionar a FaixaEtaria no evento.
+            _evento.FaixaEtaria = _faixa;          
 
-            var _idItemPedido = Global.ItemPedido.IdItemPedido;
-            Global.Ticket = new TicketBusiness().GetTicket(Global.Pedido.IdPedido, _idItemPedido);
-            Global.Evento = new EventoBusiness().GetEventoByIdLocal(Global.Ticket.Setor.Local.IdLocal);
-
-            Evento = Global.Evento;
-            Ticket = Global.Ticket;
+            Evento = _evento;
+            Ticket = _ticket;
         }
     }
 }

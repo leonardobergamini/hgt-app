@@ -22,29 +22,40 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill"> <!-- BackgroundColor="{StaticResource Accent}" -->
+            <StackLayout>
                 <ContentView>
-                    <Image Source="{Binding Evento.UrlImagem}" HeightRequest="120"/>
+                    <Image Source="{Binding Evento.UrlImagem}"/>
                 </ContentView>
             </StackLayout>
         </StackLayout>
         <ScrollView Grid.Row="1">
             <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
                 <Label Text="{Binding Evento.NomeEvento}" x:Name="LabelNome" FontAttributes="Bold" FontSize="22" />
-                <Label Text="{Binding Evento.FaixaEtaria.NomeFaixaEtaria, StringFormat='Classificação: {0:F0}'}" 
-                       FontSize="Small"/>
+                <Label Text="{Binding Evento.FaixaEtaria.NomeFaixaEtaria, StringFormat='Classificação: {0:F0}'}"
+                FontSize="Small"/>
                 <Label Text="Descrição: "/>
                 <Label Text="{Binding Evento.Descricao}"/>
-                <Label Text="{Binding Evento.DtInicioEvento}"/>
-                <Label Text="{Binding Evento.DtFinalEvento}"/>
-                <Label Text="{Binding Ticket.Preco, StringFormat='R$ {0:F0}'}" FontSize="Medium" FontAttributes="Bold"/>
+                <Label Text="Data do início do Evento: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.DtInicioEvento, StringFormat='{0:dd/MM/yyyy}'}"/>
+                
+                <Label Text="Hora do início do Evento: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.HoraInicioEvento, StringFormat='{0:HH:mm}'}"/>
+                
+                <Label Text="Data do final do Evento: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.DtFinalEvento, StringFormat='{0:dd/MM/yyyy}'}"/>
+                
+                <Label Text="Hora do final do Evento: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.HoraTerminoEvento, StringFormat='{0:HH:mm}'}"/>
+                
+                <Label Text="{Binding Ticket.Preco, StringFormat='Valor do ingresso: {0:C}'}" FontSize="Medium" FontAttributes="Bold"/>
+                <!--<Label Text="{Binding Ticket}"/>-->
                 <Button BackgroundColor="Black" HeightRequest="1"/>
                 <Label Text="Meu ingresso:" FontSize="Large" FontAttributes="Bold"/>
                 
                 <zx:ZXingBarcodeImageView
                     BarcodeFormat="QR_CODE"
-                    BarcodeValue="{Binding Ticket.IdTicket}" 
+                    BarcodeValue="{Binding Ticket.QrCode}" 
                     HorizontalOptions="FillAndExpand" 
                     VerticalOptions="FillAndExpand" 
                     x:Name="QRCodeImage"

@@ -16,9 +16,7 @@ namespace App6.Layers.Business
             }else{
                 try
                 {
-                    var usuarioService = new UsuarioServices();
-                    // var variavel = usuarioService.UsuarioValido(_usuario, _senha);
-                    var usuario = usuarioService.GetLogin(_usuario, _senha);
+                    var usuario = new UsuarioServices().GetLogin(_usuario, _senha);
                     return usuario;
                 }
                 catch (Exception e)

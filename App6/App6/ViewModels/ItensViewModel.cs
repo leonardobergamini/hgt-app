@@ -25,14 +25,14 @@ namespace App6.ViewModels
             PedidoAgrupadoModel _pedidoNovo = new PedidoAgrupadoModel(){LongName = "Novos"};
             PedidoAgrupadoModel _pedidoHoje = new PedidoAgrupadoModel() { LongName = "É hoje!" };
 
-            var _pedidos = new PedidoBusiness().GetAllPedidoAndEventos();
+            var _pedidos = new PedidoBusiness().GetAllPedidoAndEventos(Global.FormaPagamento.IdFormaPagamento);
 
             foreach (var pedido in _pedidos)
             {
                 var _dia = pedido.Evento.DtInicioEvento.Day;
                 var _mes = pedido.Evento.DtInicioEvento.Month;
                 var _ano = pedido.Evento.DtInicioEvento.Year;
-                //19/12/2018
+
                 if (_ano >= DateTime.Now.Year)
                 {
                     if(_mes == DateTime.Now.Month)
@@ -71,7 +71,9 @@ namespace App6.ViewModels
             PedidoAgrupado.Add(_pedidoAntigo);
             PedidoAgrupado.Add(_pedidoHoje);
 
+
             ListaPedido = PedidoAgrupado;
+
         }
         private IList<PedidoAgrupadoModel> listaPedido;
         public IList<PedidoAgrupadoModel> ListaPedido{

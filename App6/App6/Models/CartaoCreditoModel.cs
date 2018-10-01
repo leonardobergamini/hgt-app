@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace App6.Models
 {
     public class CartaoCreditoModel

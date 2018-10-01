@@ -1,134 +1,79 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using App6.Models;
+using Newtonsoft.Json;
 
 namespace App6.Layers.Services
 {
     public class TicketServices
     {
-        public TicketModel GetTicket(String _idItem, String _idPedido){
+        public TicketModel GetTicketById(String _idTicket){
+            var auth = new APIConfig().Auth();
+            var _accessToken = auth.access_token;
+            var _url = auth.instance_url;
 
-            TicketModel _tickets = new TicketModel();
 
-            if(_idItem.Equals("1") && _idPedido.Equals("P-0001")){
-                var _setor = new SetorServices().GetSetor("1");
-                var _ticket = new TicketModel()
-                {
-                    IdTicket = "1",
-                    CodIngresso = "A21",
-                    Preco = 75.0,
-                    UrlQrCode = "qr_code.png",
-                    Setor = _setor
-                };
-                _tickets = _ticket;
-            }
-            if (_idItem.Equals("2") && _idPedido.Equals("P-0002"))
+            var _urlAccountApi = _url + "/services/data/v43.0/query/?q= SELECT Id, Name, " +
+                "preco__c , cod_ingresso__c, setor__c FROM ticket__c " +
+                "WHERE Id = '" + _idTicket + "'";
+
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization =
+                      new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _accessToken);
+
+            var response = client.GetAsync(_urlAccountApi).Result;
+
+            try
             {
-                var _setor = new SetorServices().GetSetor("2");
-                var _ticket = new TicketModel()
-                {
-                    IdTicket = "2",
-                    CodIngresso = "B11",
-                    Preco = 195.0,
-                    UrlQrCode = "qr_code.png",
-                    Setor = _setor
-                };
-                _tickets = _ticket;
+                var conteudoResposta = response.Content.ReadAsStringAsync().Result;
+                var ticketApi = JsonConvert.DeserializeObject<TicketModel>(conteudoResposta);
+
+                return ticketApi.records[0];
             }
-            if (_idItem.Equals("3") && _idPedido.Equals("P-0003"))
+            catch (Exception e)
             {
-                var _setor = new SetorServices().GetSetor("3");
-                var _ticket = new TicketModel()
-                {
-
-                    IdTicket = "3",
-                    CodIngresso = "A03",
-                    Preco = 1395.0,
-                    UrlQrCode = "qr_code.png",
-                    Setor = _setor
-                };
-                _tickets = _ticket;
-            }
-            if (_idItem.Equals("4") && _idPedido.Equals("P-0001"))
-            {
-                var _setor = new SetorServices().GetSetor("1");
-                var _ticket = new TicketModel()
-                {
-
-                    IdTicket = "4",
-                    CodIngresso = "A08",
-                    Preco = 1095.0,
-                    UrlQrCode = "qr_code.png",
-                    Setor = _setor
-                };
-                _tickets = _ticket;
+                //(response.IsSuccessStatusCode)
+                throw;
             }
 
-            return _tickets;
         }
 
-        public TicketModel GetTicketByIdSetor(String _idSetor){
+        public TicketModel GetTicketByIdItem(String _idItem){
+            var auth = new APIConfig().Auth();
+            var _accessToken = auth.access_token;
+            var _url = auth.instance_url;
 
-            TicketModel _tickets = new TicketModel();
 
-            if (_idSetor == "1")
+            var _urlAccountApi = _url + "/services/data/v43.0/query/?q= SELECT ticket__c" +
+                " FROM itens_pedido__c WHERE Id = '" + _idItem + "'";
+
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization =
+                      new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _accessToken);
+
+            var response = client.GetAsync(_urlAccountApi).Result;
+
+            try
             {
-                var _setor = new SetorServices().GetSetor("1");
-                var _ticket = new TicketModel()
-                {
-                    IdTicket = "1",
-                    CodIngresso = "A21",
-                    Preco = 75.0,
-                    UrlQrCode = "qr_code.png",
-                    Setor = _setor
-                };
-                _tickets = _ticket;
+                var conteudoResposta = response.Content.ReadAsStringAsync().Result;
+                var ticketApi = JsonConvert.DeserializeObject<ItemPedidoModel>(conteudoResposta);
+                var _idTicket = ticketApi.records[0].IdTicket;
+
+                var _ticket = GetTicketById(_idTicket);
+
+                return _ticket;
             }
-            if (_idSetor == "2")
+            catch (Exception e)
             {
-                var _setor = new SetorServices().GetSetor("2");
-                var _ticket = new TicketModel()
-                {
-                    IdTicket = "2",
-                    CodIngresso = "B11",
-                    Preco = 195.0,
-                    UrlQrCode = "qr_code.png",
-                    Setor = _setor
-                };
-                _tickets = _ticket;
-            }
-            if (_idSetor == "3")
-            {
-                var _setor = new SetorServices().GetSetor("3");
-                var _ticket = new TicketModel()
-                {
-
-                    IdTicket = "3",
-                    CodIngresso = "A03",
-                    Preco = 1395.0,
-                    UrlQrCode = "qr_code.png",
-                    Setor = _setor
-                };
-                _tickets = _ticket;
-            }
-            if (_idSetor == "3")
-            {
-                var _setor = new SetorServices().GetSetor("3");
-                var _ticket = new TicketModel()
-                {
-
-                    IdTicket = "4",
-                    CodIngresso = "A09",
-                    Preco = 1165.0,
-                    UrlQrCode = "qr_code.png",
-                    Setor = _setor
-                };
-                _tickets = _ticket;
+                //(response.IsSuccessStatusCode)
+                throw;
             }
 
-            return _tickets;
+
+            return null;
         }
     }
 }

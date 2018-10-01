@@ -1,31 +1,16 @@
 ﻿<Properties StartupConfiguration="{F2CD69AB-080A-4490-946D-EEDFCEECA1B4}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="App6/App6/Layers/Services/EventoServices.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="App6/App6/Views/ItensPage.xaml">
     <Files>
-      <File FileName="App6/App6/ViewModels/ItensViewModel.cs" Line="53" Column="1" />
-      <File FileName="App6/App6/Views/ItensPage.xaml" Line="22" Column="61" />
-      <File FileName="App6/App6/Layers/Services/EventoServices.cs" Line="54" Column="62" />
+      <File FileName="App6/App6/Views/ItemDetailPage.xaml" Line="39" Column="78" />
+      <File FileName="App6/App6/Models/EventoModel.cs" Line="38" Column="42" />
+      <File FileName="App6/App6/Layers/Services/EventoServices.cs" Line="42" Column="21" />
+      <File FileName="App6/App6/Views/ItensPage.xaml" Line="62" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.App6.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.17C83676-0D07-4834-A8F6-EA3D3DB2BB9F" automaticSigning="False" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/ItensViewModel.cs" relfile="App6/App6/ViewModels/ItensViewModel.cs" line="53" column="1" />
-      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/ItensViewModel.cs" relfile="App6/App6/ViewModels/ItensViewModel.cs" line="51" column="1" />
-      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/ItensViewModel.cs" relfile="App6/App6/ViewModels/ItensViewModel.cs" line="50" column="3" />
-      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/ItensViewModel.cs" relfile="App6/App6/ViewModels/ItensViewModel.cs" line="27" column="1" />
-      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/ItensViewModel.cs" relfile="App6/App6/ViewModels/ItensViewModel.cs" line="29" column="1" />
-      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/ItensViewModel.cs" relfile="App6/App6/ViewModels/ItensViewModel.cs" line="31" column="1" />
-      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/ItensViewModel.cs" relfile="App6/App6/ViewModels/ItensViewModel.cs" line="32" column="1" />
-      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/ItensViewModel.cs" relfile="App6/App6/ViewModels/ItensViewModel.cs" line="33" column="1" />
-      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/ItensViewModel.cs" relfile="App6/App6/ViewModels/ItensViewModel.cs" line="35" column="10" />
-      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/ItensViewModel.cs" relfile="App6/App6/ViewModels/ItensViewModel.cs" line="40" column="1" />
-      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/ItensViewModel.cs" relfile="App6/App6/ViewModels/ItensViewModel.cs" line="41" column="1" />
-      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/ItensViewModel.cs" relfile="App6/App6/ViewModels/ItensViewModel.cs" line="44" column="1" />
-      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/ItensViewModel.cs" relfile="App6/App6/ViewModels/ItensViewModel.cs" line="46" column="1" />
-      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/ItensViewModel.cs" relfile="App6/App6/ViewModels/ItensViewModel.cs" line="42" column="1" />
-      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/ItensViewModel.cs" relfile="App6/App6/ViewModels/ItensViewModel.cs" line="43" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.App6.Android AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Nexus_5X_API_28_x86" />

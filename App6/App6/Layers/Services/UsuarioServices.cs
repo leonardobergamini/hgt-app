@@ -10,32 +10,11 @@ namespace App6.Layers.Services
 {
     public class UsuarioServices
     {
-        public APIConfig Auth()
-        {
-
-            APIConfig apiConfig = new APIConfig();
-
-            var parameters = apiConfig.AcessarAPI();
-            var encodedContent = new FormUrlEncodedContent(parameters);
-            HttpClient client = new HttpClient();
-            var response = client.PostAsync(apiConfig.urlSalesForceAuth, encodedContent).Result;
-
-            if (response.IsSuccessStatusCode)
-            {
-                var conteudoResposta = response.Content.ReadAsStringAsync().Result;
-                var json = JsonConvert.DeserializeObject<APIConfig>(conteudoResposta);
-                return json;
-            }
-            else
-            {
-                throw new Exception(response.ReasonPhrase);
-            }
-        }
-
         public UsuarioModel GetLogin(String _usuario, String _senha)
         {
-            var _accessToken = Auth().access_token;
-            var _url = Auth().instance_url;
+            var auth = new APIConfig().Auth();
+            var _accessToken = auth.access_token;
+            var _url = auth.instance_url;
 
 
             var _urlAccountApi = _url + "/services/data/v43.0/query/?q= SELECT+Id+," +
