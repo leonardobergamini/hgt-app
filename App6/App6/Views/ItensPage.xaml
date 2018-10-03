@@ -38,16 +38,15 @@
                                        FontAttributes="Bold"/>
                                 <Label Text="{Binding Evento.DtInicioEvento, StringFormat='{0:dd/MM/yyyy}'}" 
                                        FontSize="13" />
-                                <Label Text="Fim do evento: " 
+                                <Label Text="Hora do início do Evento: " 
                                        FontSize="13" 
                                        FontAttributes="Bold"/>
-                                <Label Text="{Binding Evento.DtFinalEvento, StringFormat='{0:dd/MM/yyyy}'}" 
-                                       FontSize="13" />
+                                <Label Text="{Binding Evento.HoraInicioEvento, StringFormat='{0:HH:mm}'}" FontSize="13"/>
                                 <Label Text="Local" 
                                        FontSize="13" 
                                        FontAttributes="Bold"/>
                                 <Label Text="{Binding Evento.Local.NomeLocal}" 
-                                   FontSize="13" />
+                                       FontSize="13" />
                                 
                             </StackLayout>
                             

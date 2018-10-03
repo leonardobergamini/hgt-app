@@ -26,7 +26,8 @@ namespace App6.Models
 
         public override string ToString()
         {
-            return "TicketModel: IdTicket= " + IdTicket;
+            return "TicketModel: IdTicket= " + IdTicket 
+                + " CodIngresso: " + CodIngresso;
 
         }
 

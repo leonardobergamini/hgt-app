@@ -34,8 +34,12 @@
                 <Label Text="{Binding Evento.NomeEvento}" x:Name="LabelNome" FontAttributes="Bold" FontSize="22" />
                 <Label Text="{Binding Evento.FaixaEtaria.NomeFaixaEtaria, StringFormat='Classificação: {0:F0}'}"
                 FontSize="Small"/>
-                <Label Text="Descrição: "/>
+                <Label Text="Descrição: " FontAttributes="Bold"/>
                 <Label Text="{Binding Evento.Descricao}"/>
+                
+                <Label Text="Titular do ticket: " FontAttributes="Bold"/>
+                <Label Text="{Binding TitularTicket.NomeCompleto}"/>
+                
                 <Label Text="Data do início do Evento: " FontAttributes="Bold"/>
                 <Label Text="{Binding Evento.DtInicioEvento, StringFormat='{0:dd/MM/yyyy}'}"/>
                 
