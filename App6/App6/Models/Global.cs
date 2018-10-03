@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using App6.Layers.Services;
 
 namespace App6.Models
 {
@@ -7,7 +8,7 @@ namespace App6.Models
     {
         public static UsuarioModel Usuario { get; set; }
         public static TicketModel Ticket { get; set; }
-        public static EventoModel Evento { get; set;}
+        public static EventoModel Evento { get; set; }
         public static List<TicketModel> Tickets { get; set; }
         public static List<EventoModel> Eventos { get; set; }
         public static List<PedidoModel> Pedidos { get; set; }
@@ -15,7 +16,11 @@ namespace App6.Models
         public static ItemPedidoModel ItemPedido { get; set; }
         public static PedidoModel Pedido { get; set; }
         public static FormaPagamentoModel FormaPagamento { get; set; }
-        public static String CartaoCredito { get; set;}
+        public static String CartaoCredito { get; set; }
         public static TitularTicketModel TitularTicket { get; set; }
+        public static APIConfig Auth { get; set; }
+        public static String AccessToken { get; set; }
+        public static String Url { get; set; }
+
     }
 }

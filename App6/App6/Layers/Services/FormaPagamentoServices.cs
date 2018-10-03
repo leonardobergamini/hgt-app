@@ -9,17 +9,21 @@ namespace App6.Layers.Services
     {
         public FormaPagamentoModel GetFormaPagamento(UsuarioModel _usuario){
 
-            var auth = new APIConfig().Auth();
-            var _accessToken = auth.access_token;
-            var _url = auth.instance_url;
+            //var auth = new APIConfig().Auth();
+            //var _accessToken = auth.access_token;
+            //var _url = auth.instance_url;
 
-            var _urlAccountApi = _url + "/services/data/v43.0/query/?q= SELECT Id, " +
+            //Global.Auth = new APIConfig().Auth();
+            Global.AccessToken = Global.Auth.access_token;
+            Global.Url = Global.Auth.instance_url;
+
+            var _urlAccountApi = Global.Url + "/services/data/v43.0/query/?q= SELECT Id, " +
                 "Contato__c, cartao_credito__c FROM forma_de_pagamento__c " +
                 "WHERE Contato__c = '" + _usuario.IdCliente + "'";
 
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization =
-                      new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _accessToken);
+                      new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Global.AccessToken);
 
             var response = client.GetAsync(_urlAccountApi).Result;
 
@@ -35,34 +39,6 @@ namespace App6.Layers.Services
                 //(response.IsSuccessStatusCode)
                 throw;
             }
-
-
-
-            //if(Global.Usuario.IdCliente.Equals("003f400000ZHEbGAAX")){
-            //    var _cartao = new CartaoCreditoServices().GetCartaoCredito("1");
-            //    var _formaPg = new FormaPagamentoModel
-            //    {
-            //        IdFormaPagamento = "1",
-            //        Usuario = Global.Usuario,
-            //        CartaoCredito = _cartao
-            //    };
-
-            //    return _formaPg;
-            //}else if (Global.Usuario.IdCliente.Equals("003f400000ZHEbVAAX"))
-            //{
-            //    var _cartao = new CartaoCreditoServices().GetCartaoCredito("2");
-            //    var _formaPg = new FormaPagamentoModel
-            //    {
-            //        IdFormaPagamento = "2",
-            //        Usuario = Global.Usuario,
-            //        CartaoCredito = _cartao
-            //    };
-
-            //    return _formaPg;
-            //}else{
-            //    return null;
-            //}
-
 
         }
 

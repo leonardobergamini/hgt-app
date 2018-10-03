@@ -21,7 +21,7 @@ namespace App6.ViewModels
                 _item.Ticket = new TicketBusiness().GetTicketById(item.IdTicket);
                 _item.Ticket.Setor = new SetorBusiness().GetSetorById(_item.Ticket.IdSetor);
                 _item.TitularTicket = new TitularTicketBusiness().GetTitularTicketById(item.IdTitularTicket);
-                _item.TitularTicket.NomeCompleto = _item.TitularTicket.PrimeiroNome + " " + _item.TitularTicket.Sobrenome;
+                //_item.TitularTicket.NomeCompleto = _item.TitularTicket.PrimeiroNome + " " + _item.TitularTicket.Sobrenome;
 
 
                 _lista.Add(_item);

@@ -8,8 +8,9 @@ namespace App6.Layers.Business
     {
         public CartaoCreditoModel GetCartaoCredito(UsuarioModel _usuario)
         {
-            var _cartao = new CartaoCreditoServices().GetCartaoCredito(_usuario);
-            return _cartao;
+            //var _cartao = new CartaoCreditoServices().GetCartaoCredito(_usuario);
+            //return _cartao;
+            return null;
         }
     }
 }

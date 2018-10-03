@@ -16,7 +16,7 @@ namespace App6.Models
         [Newtonsoft.Json.JsonProperty(PropertyName = "sobrenome__c")]
         public String Sobrenome { get; set;}
 
-        public String NomeCompleto { get; set; }
+        public String NomeCompleto { get { return PrimeiroNome + " " + Sobrenome; } }
 
         [Newtonsoft.Json.JsonProperty(PropertyName = "dt_nascimento__c")]
         public DateTime DtNascimento { get; set; }

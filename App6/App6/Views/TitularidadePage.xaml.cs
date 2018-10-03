@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using Xamarin.Forms;
 
 namespace App6.Views
@@ -11,5 +10,6 @@ namespace App6.Views
         {
             InitializeComponent();
         }
+
     }
 }

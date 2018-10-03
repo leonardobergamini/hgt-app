@@ -1,16 +1,33 @@
 ﻿<Properties StartupConfiguration="{F2CD69AB-080A-4490-946D-EEDFCEECA1B4}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="App6/App6/Views/ItensPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="App6/App6/ViewModels/ItemDetailViewModel.cs">
     <Files>
-      <File FileName="App6/App6/Views/ItemDetailPage.xaml" Line="39" Column="78" />
-      <File FileName="App6/App6/Models/EventoModel.cs" Line="38" Column="42" />
-      <File FileName="App6/App6/Layers/Services/EventoServices.cs" Line="42" Column="21" />
-      <File FileName="App6/App6/Views/ItensPage.xaml" Line="62" Column="1" />
+      <File FileName="App6/App6/ViewModels/ItensViewModel.cs" Line="86" Column="1" />
+      <File FileName="App6/App6/ViewModels/ItensDetailViewModel.cs" Line="24" Column="19" />
+      <File FileName="App6/App6/ViewModels/ItemDetailViewModel.cs" Line="24" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.App6.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.17C83676-0D07-4834-A8F6-EA3D3DB2BB9F" automaticSigning="False" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/Layers/Services/TitularTicketServices.cs" relfile="App6/App6/Layers/Services/TitularTicketServices.cs" line="87" column="1" />
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/Layers/Services/TitularTicketServices.cs" relfile="App6/App6/Layers/Services/TitularTicketServices.cs" line="89" column="1" />
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/Layers/Services/TitularTicketServices.cs" relfile="App6/App6/Layers/Services/TitularTicketServices.cs" line="116" column="1" />
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/Layers/Services/UsuarioServices.cs" relfile="App6/App6/Layers/Services/UsuarioServices.cs" line="53" column="1" />
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/Layers/Services/UsuarioServices.cs" relfile="App6/App6/Layers/Services/UsuarioServices.cs" line="84" column="1" />
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/TitularidadeViewModel.cs" relfile="App6/App6/ViewModels/TitularidadeViewModel.cs" line="44" column="31" />
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/TitularidadeViewModel.cs" relfile="App6/App6/ViewModels/TitularidadeViewModel.cs" line="39" column="1" />
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/TitularidadeViewModel.cs" relfile="App6/App6/ViewModels/TitularidadeViewModel.cs" line="18" column="1" />
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/TitularidadeViewModel.cs" relfile="App6/App6/ViewModels/TitularidadeViewModel.cs" line="20" column="1" />
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/TitularidadeViewModel.cs" relfile="App6/App6/ViewModels/TitularidadeViewModel.cs" line="23" column="1" />
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/TitularidadeViewModel.cs" relfile="App6/App6/ViewModels/TitularidadeViewModel.cs" line="24" column="1" />
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/ViewModels/TitularidadeViewModel.cs" relfile="App6/App6/ViewModels/TitularidadeViewModel.cs" line="25" column="1" />
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/Layers/Services/TitularTicketServices.cs" relfile="App6/App6/Layers/Services/TitularTicketServices.cs" line="100" column="1" />
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/Layers/Services/TitularTicketServices.cs" relfile="App6/App6/Layers/Services/TitularTicketServices.cs" line="107" column="1" />
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/Layers/Services/TitularTicketServices.cs" relfile="App6/App6/Layers/Services/TitularTicketServices.cs" line="112" column="1" />
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/Layers/Services/TitularTicketServices.cs" relfile="App6/App6/Layers/Services/TitularTicketServices.cs" line="102" column="1" />
+      <Breakpoint file="/Users/leonardo/projetos/hgt-app/App6/App6/Layers/Services/TitularTicketServices.cs" relfile="App6/App6/Layers/Services/TitularTicketServices.cs" line="104" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.App6.Android AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Nexus_5X_API_28_x86" />

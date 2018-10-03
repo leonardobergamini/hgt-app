@@ -8,18 +8,22 @@ namespace App6.Layers.Services
     public class EventoServices
     {
         public EventoModel GetEventoById(String _idEvento){
-            var auth = new APIConfig().Auth();
-            var _accessToken = auth.access_token;
-            var _url = auth.instance_url;
+            //var auth = new APIConfig().Auth();
+            //var _accessToken = auth.access_token;
+            //var _url = auth.instance_url;
 
-            var _urlAccountApi = _url + "/services/data/v43.0/query/?q= SELECT Id, Name, " +
+            //Global.Auth = new APIConfig().Auth();
+            Global.AccessToken = Global.Auth.access_token;
+            Global.Url = Global.Auth.instance_url;
+
+            var _urlAccountApi = Global.Url + "/services/data/v43.0/query/?q= SELECT Id, Name, " +
                 "local__c, faixa_etaria__c, descricao__c, dt_inicio_evento__c, " +
                 "dt_final_evento__c, dt_inicio_venda__c, dt_final_venda__c, url_img__c " +
                 ", Hr_inicio_evento__c, Hr_termino_evento__c FROM evento__c WHERE Id ='" + _idEvento+"'";
 
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization =
-                      new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _accessToken);
+                      new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Global.AccessToken);
 
             var response = client.GetAsync(_urlAccountApi).Result;
 
@@ -42,16 +46,16 @@ namespace App6.Layers.Services
         //Consultar Evento por nro. do Pedido
         public EventoModel GetEventoByPedido(String _idPedido){
 
-            var auth = new APIConfig().Auth();
-            var _accessToken = auth.access_token;
-            var _url = auth.instance_url;
+            //var auth = new APIConfig().Auth();
+            //var _accessToken = auth.access_token;
+            //var _url = auth.instance_url;
 
-            var _urlAccountApi = _url + "/services/data/v43.0/query/?q= SELECT Evento__c " +
+            var _urlAccountApi = Global.Url + "/services/data/v43.0/query/?q= SELECT Evento__c " +
                 "FROM pedido__c WHERE Id ='" + _idPedido + "'";
 
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization =
-                      new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _accessToken);
+                      new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Global.AccessToken);
 
             var response = client.GetAsync(_urlAccountApi).Result;
 

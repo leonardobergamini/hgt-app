@@ -33,35 +33,46 @@ namespace App6.ViewModels
                 var _mes = pedido.Evento.DtInicioEvento.Month;
                 var _ano = pedido.Evento.DtInicioEvento.Year;
 
-                if (_ano >= DateTime.Now.Year)
+                if (_ano > DateTime.Now.Year)
                 {
-                    if(_mes == DateTime.Now.Month)
+                    //PedidoNovo
+                    _pedidoNovo.Add(pedido);
+
+                }else if(_ano == DateTime.Now.Year)
+                {
+                    if (_mes == DateTime.Now.Month)
                     {
-                        if(_dia == DateTime.Now.Day){
+                        if (_dia == DateTime.Now.Day)
+                        {
                             //PedidoHoje
                             _pedidoHoje.Add(pedido);
-                        }else if(_dia > DateTime.Now.Day)
+                        }
+                        else if (_dia > DateTime.Now.Day)
                         {
                             //PedidoNovo
                             _pedidoNovo.Add(pedido);
-                        }else{
+                        }
+                        else
+                        {
                             //PedidoAntigo
                             _pedidoAntigo.Add(pedido);
                         }
 
-                    }else if(_mes > DateTime.Now.Month)
+                    }
+                    else if (_mes > DateTime.Now.Month)
                     {
                         //PedidoNovo
                         _pedidoNovo.Add(pedido);
-                       
-                    }else
+
+                    }
+                    else
                     {
                         //PedidoAntigo
                         _pedidoAntigo.Add(pedido);
                     }
 
-                }else 
-                {
+                }
+                else{
                     //PedidoAntigo
                     _pedidoAntigo.Add(pedido);
                 }

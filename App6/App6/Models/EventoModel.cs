@@ -41,7 +41,6 @@ namespace App6.Models
         public String IdFaixaEtaria { get; set; }
         public FaixaEtariaModel FaixaEtaria { get; set; }
 
-
         [Newtonsoft.Json.JsonProperty(PropertyName = "local__c")]
         public String IdLocal { get; set; }
         public LocalModel Local { get; set; }

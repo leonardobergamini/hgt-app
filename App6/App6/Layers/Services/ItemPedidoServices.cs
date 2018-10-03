@@ -11,18 +11,22 @@ namespace App6.Layers.Services
 
         public List<ItemPedidoModel> GetAllItensByPedido(String  _idPedido){
 
-            var auth = new APIConfig().Auth();
-            var _accessToken = auth.access_token;
-            var _url = auth.instance_url;
+            //var auth = new APIConfig().Auth();
+            //var _accessToken = auth.access_token;
+            //var _url = auth.instance_url;
+
+            //Global.Auth = new APIConfig().Auth();
+            Global.AccessToken = Global.Auth.access_token;
+            Global.Url = Global.Auth.instance_url;
 
 
-            var _urlAccountApi = _url + "/services/data/v43.0/query/?q= SELECT Id, " +
+            var _urlAccountApi = Global.Url + "/services/data/v43.0/query/?q= SELECT Id, " +
                 "Pedido__c, titular_ticket__c, ticket__c FROM itens_pedido__c " +
                 "WHERE Pedido__c = '"+_idPedido+"'";
 
             HttpClient client = new HttpClient();
             client.DefaultRequestHeaders.Authorization =
-                      new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", _accessToken);
+                      new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Global.AccessToken);
 
             var response = client.GetAsync(_urlAccountApi).Result;
 

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:App6.ViewModels"
              x:Class="App6.Views.TitularidadePage"
              Title="Alteração de titularidade">
-
+    
+    <ContentPage.BindingContext>
+        <vm:TitularidadeViewModel/>
+    </ContentPage.BindingContext>
+    
     <ContentPage.Resources>
         <ResourceDictionary>
             <!--Page Level Resources: Compatibile with Xamarin Live Player -->
@@ -32,7 +37,8 @@
         <Button Margin="0,10,0,0" Text="Alterar" 
                 x:Name="BotaoAlterar"
                 BackgroundColor="{StaticResource Primary}" 
-                TextColor="White" />
+                TextColor="White" 
+                Command="{Binding AlterarClickedCommand}"/>
 
     </StackLayout>
 

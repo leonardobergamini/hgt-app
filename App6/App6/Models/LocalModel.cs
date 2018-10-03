@@ -37,5 +37,11 @@ namespace App6.Models
         [Newtonsoft.Json.JsonProperty(PropertyName = "estado__c")]
         public String UF { get; set; }
 
+        public String EnderecoCompleto { get { return ToString(); } }
+
+        public override string ToString()
+        {
+            return Endereco + ", " + NroEndereco + ", "+ ComplementoEndereco;
+        }
     }
 }

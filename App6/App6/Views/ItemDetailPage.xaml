@@ -49,7 +49,19 @@
                 <Label Text="{Binding Evento.HoraTerminoEvento, StringFormat='{0:HH:mm}'}"/>
                 
                 <Label Text="{Binding Ticket.Preco, StringFormat='Valor do ingresso: {0:C}'}" FontSize="Medium" FontAttributes="Bold"/>
-                <!--<Label Text="{Binding Ticket}"/>-->
+                
+                <Label Text="Local: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.Local.NomeLocal}"/>
+                
+                <Label Text="Endereço: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.Local.EnderecoCompleto}"/>
+                
+                <Label Text="Cidade: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.Local.Cidade}"/>
+                
+                <Label Text="UF: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.Local.UF}"/>
+                
                 <Button BackgroundColor="Black" HeightRequest="1"/>
                 <Label Text="Meu ingresso:" FontSize="Large" FontAttributes="Bold"/>
                 

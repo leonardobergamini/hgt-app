@@ -25,6 +25,10 @@ namespace App6.Layers.Business
                 }
             }
         }
+
+        public UsuarioModel GetUsuarioByCpf(String _cpf){
+            return new UsuarioServices().GetUsuarioByCpf(_cpf);
+        }
     }
 }
 
