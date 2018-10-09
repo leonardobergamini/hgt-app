@@ -1,7 +1,7 @@
-﻿<Properties StartupConfiguration="{F2CD69AB-080A-4490-946D-EEDFCEECA1B4}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="App6/App6/Views/ItensPage.xaml.cs">
+﻿<Properties StartupConfiguration="{5E2FDF8D-B323-4A73-AB7D-BE0AA981C9A5}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="App6/App6.iOS/AppDelegate.cs">
     <Files>
-      <File FileName="App6/App6/Views/ItensPage.xaml.cs" Line="38" Column="66" />
+      <File FileName="App6/App6.iOS/AppDelegate.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -28,6 +28,6 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.App6.Android AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.kit_kat_4_4_-_api_19" />
+  <MonoDevelop.Ide.ItemProperties.App6.Android AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_Oreo" />
   <MultiItemStartupConfigurations />
 </Properties>

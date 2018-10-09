@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="HGTAplicativo.Views.ItemDetailPage"
+             xmlns:zx="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms" 
+             xmlns:zxcm="clr-namespace:ZXing.Common;assembly=zxing.portable"
+             Title="{Binding Ticket.CodIngresso}"
+             xmlns:vm="clr-namespace:HGTAplicativo.ViewModels">
+    
+    <ContentPage.BindingContext>
+        <vm:ItemDetailViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--Page Level Resources: Compatibile with Xamarin Live Player -->
+            <Color x:Key="Primary">#ff6a00</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill"> <!-- BackgroundColor="{StaticResource Accent}" -->
+            <StackLayout>
+                <ContentView>
+                    <Image Source="{Binding Evento.UrlImagem}"/>
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
+                <Label Text="{Binding Evento.NomeEvento}" x:Name="LabelNome" FontAttributes="Bold" FontSize="22" />
+                <Label Text="{Binding Evento.FaixaEtaria.NomeFaixaEtaria, StringFormat='Classificação: {0:F0}'}"
+                FontSize="Small"/>
+                <Label Text="Descrição: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.Descricao}"/>
+                
+                <Label Text="Titular do ticket: " FontAttributes="Bold"/>
+                <Label Text="{Binding TitularTicket.NomeCompleto}"/>
+                
+                <Label Text="Data do início do Evento: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.DtInicioEvento, StringFormat='{0:dd/MM/yyyy}'}"/>
+                
+                <Label Text="Hora do início do Evento: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.HoraInicioEvento, StringFormat='{0:HH:mm}'}"/>
+                
+                <Label Text="Data do final do Evento: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.DtFinalEvento, StringFormat='{0:dd/MM/yyyy}'}"/>
+                
+                <Label Text="Hora do final do Evento: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.HoraTerminoEvento, StringFormat='{0:HH:mm}'}"/>
+                
+                <Label Text="{Binding Ticket.Preco, StringFormat='Valor do ingresso: {0:C}'}" FontSize="Medium" FontAttributes="Bold"/>
+                
+                <Label Text="Local: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.Local.NomeLocal}"/>
+                
+                <Label Text="Endereço: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.Local.EnderecoCompleto}"/>
+                
+                <Label Text="Cidade: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.Local.Cidade}"/>
+                
+                <Label Text="UF: " FontAttributes="Bold"/>
+                <Label Text="{Binding Evento.Local.UF}"/>
+                
+                <Button BackgroundColor="Black" HeightRequest="1"/>
+                <Label Text="Meu ingresso:" FontSize="Large" FontAttributes="Bold"/>
+                
+                <zx:ZXingBarcodeImageView
+                    BarcodeFormat="QR_CODE"
+                    BarcodeValue="{Binding Ticket.QrCode}" 
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="FillAndExpand" 
+                    x:Name="QRCodeImage"
+                    WidthRequest="300"
+                    HeightRequest="300">
+                    <zx:ZXingBarcodeImageView.BarcodeOptions> 
+                            <zxcm:EncodingOptions 
+                            Width="60" 
+                            Height="60" />
+                    </zx:ZXingBarcodeImageView.BarcodeOptions> 
+                </zx:ZXingBarcodeImageView>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
