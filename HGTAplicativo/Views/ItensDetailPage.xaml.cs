@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Acr.UserDialogs;
 using HGTAplicativo.Models;
 
 using Xamarin.Forms;
@@ -15,10 +17,17 @@ namespace HGTAplicativo.Views
             {
                 if (e.Item == null)
                     return;
-                var _item = (ItemPedidoModel)e.Item;
-                Global.ItemPedido = _item.ItemPedido;
-                int i = 0;
-                await Navigation.PushAsync(new ItemDetailPage());
+
+                using(UserDialogs.Instance.Loading("Carregando ingresso...")){
+                    await Task.Run(() =>
+                    {
+                        var _item = (ItemPedidoModel)e.Item;
+                        Global.ItemPedido = _item.ItemPedido;
+                    });
+
+                    await Navigation.PushAsync(new ItemDetailPage());
+                }
+
             };
         }
     }

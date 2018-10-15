@@ -42,7 +42,7 @@
                 <Label Text="Telefone:" FontSize="Medium" FontAttributes="Bold"/>
                 <Label Text="{Binding Telefone}"/>
                 <Label Text="Data de nascimento:" FontSize="Medium" FontAttributes="Bold"/>
-                <Label Text="{Binding DtNascimento}"/>
+                <Label Text="{Binding DtNascimento, StringFormat='{0:dd/MM/yyyy}'}"/>
                 
                 <Button Margin="0,10,0,0" 
                         VerticalOptions="End"

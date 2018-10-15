@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace HGTAplicativo.Views
@@ -14,7 +14,8 @@ namespace HGTAplicativo.Views
 
         public void ClickedBotaoSair(Object o, EventArgs e)
         {
-            App.Current.MainPage = new LoginPage();
+
+            App.Current.MainPage = new NavigationPage(new LoginPage());
         }
     }
 }

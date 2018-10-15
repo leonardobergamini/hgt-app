@@ -44,5 +44,9 @@ namespace HGTAplicativo.Models
         [Newtonsoft.Json.JsonProperty(PropertyName = "local__c")]
         public String IdLocal { get; set; }
         public LocalModel Local { get; set; }
+
+        public Boolean Status { get; set; }
+
     }
+
 }

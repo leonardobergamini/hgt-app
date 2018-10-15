@@ -11,7 +11,7 @@ namespace HGTAplicativo.ViewModels
         public String Email { get; set; }
         public String Telefone { get; set; }
         public String Username { get; set; }
-        public String DtNascimento { get; set; }
+        public DateTime DtNascimento { get; set; }
 
         public PerfilViewModel()
         {

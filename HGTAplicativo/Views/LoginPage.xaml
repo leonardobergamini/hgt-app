@@ -36,6 +36,6 @@
                 Command="{Binding EntrarClickedCommand}"
                 BackgroundColor="{StaticResource Primary}" 
                 TextColor="White" />
-
+        
     </StackLayout>
 </ContentPage>

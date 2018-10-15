@@ -12,23 +12,30 @@ namespace HGTAplicativo.ViewModels
 
         public ItemDetailViewModel()
         {
-            var _evento = new EventoBusiness().GetEventoByPedido(Global.Pedido.IdPedido);
+            var _evento = new EventoBusiness().GetEvento(Global.Pedido.IdPedido);
+
+            //Consultas API
             var _ticket = new TicketBusiness().GetTicketByIdItem(Global.ItemPedido.IdItemPedido);
             var _faixa = new FaixaEtariaBusiness().GetFaixaEtariaById(_evento.IdFaixaEtaria);
-            var _local = new LocalBusiness().GetLocalById(_evento.IdLocal);
             var _titularTicket = new TitularTicketBusiness().GetTitularTicketById(Global.ItemPedido.IdTitularTicket);
 
             //Adicionar a FaixaEtaria no evento.
             _evento.FaixaEtaria = _faixa;
 
-            //Adicionar o Local(Endereço)
-            _evento.Local = _local;
-
             //Adicionar Titular do ticket
             TitularTicket = _titularTicket;
 
-            Evento = _evento;
-            Ticket = _ticket;
+            if(_evento.Status != true){
+                _ticket.Status = "ATIVO";
+                Ticket = _ticket;
+                Evento = _evento;
+            }
+            else{
+                _ticket.Status = "VENCIDO";
+                Ticket = _ticket;
+                Evento = _evento;
+            }
+
         }
     }
 }

@@ -24,7 +24,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill"> <!-- BackgroundColor="{StaticResource Accent}" -->
-            <StackLayout>
+            <StackLayout  Margin="0" Padding="0">
                 <ContentView>
                     <Image Source="{Binding Evento.UrlImagem}"/>
                 </ContentView>

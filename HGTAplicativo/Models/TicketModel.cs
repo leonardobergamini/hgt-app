@@ -16,18 +16,18 @@ namespace HGTAplicativo.Models
         [Newtonsoft.Json.JsonProperty(PropertyName = "cod_ingresso__c")]
         public String CodIngresso { get; set; }
 
-
         [Newtonsoft.Json.JsonProperty(PropertyName = "setor__c")]
         public String IdSetor { get; set; }
         public SetorModel Setor { get; set; }
 
         public String QrCode { get { return ToString(); } }
-
+        public String Status { get; set; }
 
         public override string ToString()
         {
             return "TicketModel: IdTicket= " + IdTicket
-                + " CodIngresso: " + CodIngresso;
+                + " - CodIngresso: " + CodIngresso +
+                " - Status= " + Status;
 
         }
     }

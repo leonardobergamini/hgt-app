@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Acr.UserDialogs;
 using HGTAplicativo.Layers.Business;
 using HGTAplicativo.Models;
 
@@ -8,9 +10,8 @@ namespace HGTAplicativo.ViewModels
     public class ItensDetailViewModel
     {
         public PedidoModel Pedido { get; set; }
+        List<ItemPedidoModel> _lista = new List<ItemPedidoModel>();
         public ItensDetailViewModel(){
-
-            List<ItemPedidoModel> _lista = new List<ItemPedidoModel>();
 
             var _itens = new ItemPedidoBusiness().GetAllItemPedido(Global.Pedido.IdPedido);
 
@@ -26,9 +27,18 @@ namespace HGTAplicativo.ViewModels
                 _lista.Add(_item);
 
             }
+
             Pedido = Global.Pedido;
             ListaItens = _lista;
         }
+
+        public async Task GetListaItens(){
+            await Task.Run(() =>
+            {
+
+            });
+        }
+
         private IList<ItemPedidoModel> listaItens;
         public IList<ItemPedidoModel> ListaItens
         {

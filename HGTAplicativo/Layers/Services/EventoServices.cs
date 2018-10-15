@@ -25,6 +25,7 @@ namespace HGTAplicativo.Layers.Services
 
             try
             {
+                var json = JsonConvert.SerializeObject(new EventoModel());
                 var conteudoResposta = response.Content.ReadAsStringAsync().Result;
                 var eventoApi = JsonConvert.DeserializeObject<EventoModel>(conteudoResposta);
 

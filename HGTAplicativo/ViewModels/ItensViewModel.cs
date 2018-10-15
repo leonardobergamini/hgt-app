@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using HGTAplicativo.Layers.Business;
 using HGTAplicativo.Models;
+using System.Threading;
+using System.Threading.Tasks;
+using Acr.UserDialogs;
 
 namespace HGTAplicativo.ViewModels
 {
@@ -76,10 +79,10 @@ namespace HGTAplicativo.ViewModels
             PedidoAgrupado.Add(_pedidoAntigo);
             PedidoAgrupado.Add(_pedidoHoje);
 
-
             ListaPedido = PedidoAgrupado;
-
+       
         }
+
         private IList<PedidoAgrupadoModel> listaPedido;
         public IList<PedidoAgrupadoModel> ListaPedido
         {

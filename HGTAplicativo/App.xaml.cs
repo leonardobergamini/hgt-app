@@ -19,9 +19,7 @@ namespace HGTAplicativo
         {
             MessagingCenter.Subscribe<string>("", "LoginSucesso", (sender) =>
             {
-                System.Diagnostics.Debug.Print("Flavio 4" + DateTime.Now);
                 MainPage = new NavigationPage(new MainPage());
-                System.Diagnostics.Debug.Print("Flavio 5" + DateTime.Now);
             });
         }
 

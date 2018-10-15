@@ -16,7 +16,7 @@ namespace HGTAplicativo.Models
         public String Sobrenome { get; set; }
 
         [Newtonsoft.Json.JsonProperty(PropertyName = "Birthdate")]
-        public String DtNascimento { get; set; }
+        public DateTime DtNascimento { get; set; }
 
         [Newtonsoft.Json.JsonProperty(PropertyName = "cpf__c")]
         public String CPF { get; set; }

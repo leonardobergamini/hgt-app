@@ -17,7 +17,7 @@ namespace HGTAplicativo.Layers.Business
             {
                 try
                 {
-                    var usuario = new UsuarioServices().GetLogin(_usuario, _senha);
+                    var usuario = new UsuarioServices().GetLogin(_usuario.ToLower(), _senha);
                     return usuario;
                 }
                 catch (Exception e)
@@ -27,9 +27,5 @@ namespace HGTAplicativo.Layers.Business
             }
         }
 
-        public UsuarioModel GetUsuarioByCpf(String _cpf)
-        {
-            return new UsuarioServices().GetUsuarioByCpf(_cpf);
-        }
     }
 }
