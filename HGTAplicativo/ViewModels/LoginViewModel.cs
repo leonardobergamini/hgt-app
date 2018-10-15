@@ -23,10 +23,16 @@ namespace HGTAplicativo.ViewModels
             {
                 try
                 {
-                    UserDialogs.Instance.ShowLoading("Carregando...");
-                    await GetUsuario();
-                    App.Current.MainPage = new NavigationPage(new Views.MainPage());
+                    using(UserDialogs.Instance.Loading("Entrando...")){
+                        await Task.Run(() =>
+                        {
+                            Global.Usuario = new UsuarioBusiness().Login(Usuario, Senha);
+                            Global.FormaPagamento = new FormaPagamentoBusiness().GetFormaPagamento(Global.Usuario);
+                            Global.CartaoCredito = Global.FormaPagamento.IdCartaoCredito;
+                        });
 
+                        App.Current.MainPage = new NavigationPage(new Views.MainPage());
+                    }
                 }
                 catch (Exception e)
                 {
@@ -38,12 +44,6 @@ namespace HGTAplicativo.ViewModels
 
         public async Task GetUsuario(){
 
-            await Task.Run(() =>
-            {
-                Global.Usuario = new UsuarioBusiness().Login(Usuario, Senha);
-                Global.FormaPagamento = new FormaPagamentoBusiness().GetFormaPagamento(Global.Usuario);
-                Global.CartaoCredito = Global.FormaPagamento.IdCartaoCredito;
-            });
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
